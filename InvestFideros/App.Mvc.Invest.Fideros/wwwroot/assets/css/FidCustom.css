@@ -1,0 +1,114 @@
+﻿#gdpr-cookie-message {
+    position: fixed;
+    z-index: 999;
+    left: 0px;
+    bottom: 0px;
+    width: 100vw;
+    /* max-width: 375px; */
+    box-shadow: 0 0px 20px 0 rgba(40,37,89,.9);
+    -webkit-box-shadow: -1px -4px 49px -16px rgba(0,0,0,0.45);
+    -moz-box-shadow: -1px -4px 49px -16px rgba(0,0,0,0.45);
+    box-shadow: -1px -4px 49px -16px rgba(0,0,0,0.45);
+    background-color: rgba(255,255,255,0.95);
+    padding: 20px;
+    text-align: center;
+}
+
+    #gdpr-cookie-message h4 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    #gdpr-cookie-message h5 {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    #gdpr-cookie-message p, #gdpr-cookie-message ul {
+        color: #605e7e;
+        font-size: 15px;
+        line-height: 1.5em;
+    }
+
+        #gdpr-cookie-message p:last-child {
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+    #gdpr-cookie-message li {
+        width: 49%;
+        display: inline-block;
+    }
+
+    #gdpr-cookie-message a {
+        text-decoration: none;
+        font-size: 15px;
+        padding-bottom: 2px;
+        transition: all 0.3s ease-in;
+    }
+
+/*#gdpr-cookie-message button,
+    button#ihavecookiesBtn {
+        border: none;
+        background: #ff2b88;
+        color: white;
+        font-size: 15px;
+        padding: 7px 18px;
+        border-radius: 3px;
+        margin-top: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }*/
+
+@media (max-width:390px) {
+    button#gdpr-cookie-advanced {
+        margin-left: 0 !important;
+    }
+
+    #gdpr-cookie-message p button {
+        width: 100%;
+    }
+}
+
+@media(max-width:767px) {
+    .item2-gl-nav .item2-gl-menu {
+        display: none;
+    }
+
+    .item2-gl-nav h6 {
+        margin-bottom: 20px !important;
+    }
+}
+/* override by OBATRADE */
+@media(max-width:480px) {
+    /*#gdpr-cookie-message{
+		margin: 0 15px;
+		display: block;
+		right: 0;
+		box-shadow: 0 0px 20px 0 rgba(40,37,89,.9);
+		display:none !important;
+	}*/
+}
+
+button#gdpr-cookie-advanced {
+    margin-left: 4px;
+}
+
+#gdpr-cookie-message button:disabled {
+    opacity: 0.3;
+}
+
+#gdpr-cookie-message input[type="checkbox"] {
+    float: none;
+    margin-top: 0;
+    margin-right: 5px;
+}
+
+.marketplace-section img {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    padding: 2.3rem 0;
+}

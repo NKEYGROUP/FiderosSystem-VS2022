@@ -1,0 +1,158 @@
+/*------------------------------------------------------------------
+
+Project        :   Pinlist – Directory, Classifieds and Jobs Multipurpose Bootstrap5 HTML5 Listing Template
+Version        :   V.1.0
+Create Date    :   02/06/22
+Copyright      :   Spruko Technologies Private Limited 
+Author         :   SPRUKO™
+Author URL     :   https://themeforest.net/user/spruko
+Support	       :   support@spruko.com
+License        :   http://themeforest.net/licenses/standard
+
+-------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-bg-color: #6963ff;
+    --primary-bg-hover: #5a54f8;
+    --primary-shadow: rgba(90, 84, 248, 0.5);
+    --secondary-color: #ff2b88;
+    --dark-theme: #212332;
+    --dark-body: #2a2e3f;
+    --dark-border: rgba(255, 255, 255, 0.1);
+    --dark-color: #fff;
+    --dark-shadow: rgba(131, 131, 131, 0.1);
+    --primary-1: rgba(105, 99, 255, 0.1);
+    --primary2: rgba(105, 99, 255, 0.2);
+    --primary-3: rgba(105, 99, 255, 0.3);
+    --primary-4: rgba(105, 99, 255, 0.4);
+    --primary-5: rgba(105, 99, 255, 0.5);
+    --primary-6: rgba(105, 99, 255, 0.6);
+    --primary-7: rgba(105, 99, 255, 0.7);
+    --primary-8: rgba(105, 99, 255, 0.8);
+    --primary-9: rgba(105, 99, 255, 0.9);
+    --success: #00e682;
+    --info: #22a5e0;
+    --warning: #ff8819;
+    --danger: #ff382b;
+    --blue: #467fcf;
+    --yellow: #ffa22b;
+    --lime: #63e600;
+    --pink: #ff2b88;
+    --teal: #05e6e6;
+    --purple: #604dd8;
+    --orange: #e67605;
+    --dark: #343a40;
+    --indigo: #6574cd;
+    --white: #fff;
+    --black: #000;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1280px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-monospace: Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ###### bootstrap ####### */
+@import "variables";
+@import "bootstrap/bootstrap-custom";
+@import "bootstrap/accordion";
+@import "bootstrap/alerts";
+@import "bootstrap/avatar";
+@import "bootstrap/badges";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/buttons";
+@import "bootstrap/cards";
+@import "bootstrap/carousel";
+@import "bootstrap/dropdown";
+@import "bootstrap/formelements";
+@import "bootstrap/grid";
+@import "bootstrap/input-group";
+@import "bootstrap/jumbotron";
+@import "bootstrap/modal";
+@import "bootstrap/nav";
+@import "bootstrap/pagination";
+@import "bootstrap/panel";
+@import "bootstrap/progress";
+@import "bootstrap/tables";
+@import "bootstrap/tags";
+@import "bootstrap/thumbnail";
+@import "bootstrap/tooltip&popover";
+
+/* ###### custom ####### */
+
+@import "custom/components-cols";
+@import "custom/count-down";
+@import "custom/customstyles";
+@import "custom/highlight";
+@import "custom/image";
+@import "custom/label";
+@import "custom/list";
+@import "custom/media";
+@import "custom/navbar";
+@import "custom/pricing";
+@import "custom/ratings";
+@import "custom/tabs";
+@import "custom/timeline";
+
+/* ###### layouts ####### */
+
+@import "layout/color";
+@import "layout/feather";
+@import "layout/flags";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/horizontal2";
+@import "layout/horizontal";
+@import "layout/icon";
+@import "layout/item";
+@import "layout/loaders";
+@import "layout/rtl";
+@import "layout/dark-style";
+@import "layout/sidebar";
+
+/* ###### lib ####### */
+
+@import "lib/checkbox";
+@import "lib/custom-control";
+@import "lib/custom-range";
+@import "lib/custom-switch";
+@import "lib/date-picker";
+@import "lib/jqstool";
+@import "lib/jvector";
+@import "lib/range";
+@import "lib/select2";
+@import "lib/selectgroup";
+@import "lib/selectize";
+
+/* ###### template ####### */
+
+@import "template/admin-nav";
+@import "template/calendar";
+@import "template/chart";
+@import "template/chat";
+@import "template/email";
+@import "template/error";
+@import "template/ribbon";
+@import "template/usercard";
+@import "template/weather";
+@import "template/widgets";
+
+/* ###### util ####### */
+
+@import "util/alignment";
+@import "util/background";
+@import "util/border";
+@import "util/display";
+@import "util/float-elements";
+@import "util/height";
+@import "util/margin";
+@import "util/padding";
+@import "util/position";
+@import "util/typography";
+@import "util/width";

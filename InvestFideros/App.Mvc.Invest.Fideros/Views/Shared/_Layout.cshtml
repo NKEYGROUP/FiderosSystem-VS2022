@@ -1,0 +1,394 @@
+﻿@using App.Mvc.Invest.Fideros.Utils;
+@{
+    Layout = null;
+    var controllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+    var actionName = this.ViewContext.RouteData.Values["action"].ToString();
+    //ViewBag.active = "";
+}
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P3M2NTH9');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="msapplication-TileColor" content="#0f75ff">
+    <meta name="theme-color" content="#2ddcd3">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="@ViewBag.MetaDescription"
+          content="Pinlist – Directory, Classifieds and Jobs Multipurpose Bootstrap5 HTML5 Listing Template">
+    <meta name="author" content="sprukotechnologies">
+    <meta name="keywords"
+          content="classifieds,real estate,education online classess,jobs,business directory,coupons,cars,e-commerce,market place,auctions,tours & travels,domain marketPlace,books listing,doctors listing,rating & reviews,iCO list,wedding,knowledge base,softwares,video listing,booking html template,bootstrap 4 html template,buy templates,directory listing html template,html and css website templates,html app template,html5 web templates,modern html templates,premium bootstrap templates,responsive ui,html template,html5 template,ecommerce html template,directory listing html template,html css js templates,search html template,best ui kits,bootstrap 4 ui kit,bootstrap kit,css ui kit,flat ui kit,html ui kit,kit ui,multipurpose website ui kit,ui kit template,uikit css,web ui kit,website ui kit,wireframe kit,wireframe ui kit,bootstrap ui kit,dashboard ui kit,flat ui,flat ui design,uikit">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Title -->
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap Css -->
+    <link id="style" href="~/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Dashboard Css -->
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins.css" rel="stylesheet" />
+
+    <!-- Font-awesome  Css -->
+    <link rel="stylesheet" href="~/assets/css/icons.css">
+</head>
+
+<body class="">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3M2NTH9"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--Loader-->
+    <div id="global-loader">
+        <img src="~/assets/images/other/loader.svg" class="loader-img floating" alt="">
+    </div>
+
+    <!--Topbar-->
+    <div class="header-main">
+        @* <div class="top-bar">
+        <div class="container">
+        <div class="row">
+        <div class="col-xl-8 col-lg-8 col-sm-4 col-7">
+        <div class="top-bar-left d-flex">
+        <div class="clearfix">
+        <ul class="socials">
+        <li>
+        <a class="social-icon text-dark" href="" target="_blank">
+        <span>
+        <i class="fa fa-phone me-1"></i>:
+        +33 6 33 37 24 24
+        </span>
+        </a>
+        </li>
+        <li>
+        <a class="social-icon text-dark" href="https://wa.me/22991953795?text=Information&nbsp;sur&nbsp;Fideros" target="_blank">
+        <span>
+        <i class="fa fa-whatsapp"></i>:
+        +229 91 95 37 95
+        </span>
+        </a>
+        </li>
+        </ul>
+        </div>
+        @*<div class="clearfix">
+        <ul class="contact border-start">
+        <li class="me-5 d-lg-none">
+        <a href="#" class="callnumber text-dark">
+        <span>
+        <i class="fa fa-phone me-1"></i>:
+        +33 6 33 37 24 24
+        </span>
+        </a>
+        </li>
+
+        </ul>
+        </div>
+        </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-sm-8 col-5">
+        <div class="top-bar-right">
+        <ul class="custom">
+        <li>
+        <a href="/Account/Login" class="text-dark">
+        <i class="fa fa-sign-in me-1"></i>
+        <span>Connexion</span>
+        </a>
+        </li>
+
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>*@
+        <!-- Mobile Header -->
+        <div class="sticky">
+            <div class="horizontal-header clearfix ">
+                <div class="container">
+                    <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
+                    <span class="smllogo">
+                        <a href="@Url.Action("Index", "Global")" class="light-logo">
+                            <img class="mobile-light-logo" src="~/assets/images/brand/Fideros_invest_logo.png" width="120" alt="" />
+                        </a>
+                        <a href="@Url.Action("Index", "Global")" class="dark-logo">
+                            <img class="mobile-dark-logo" src="~/assets/images/brand/Fideros_invest_logo.png" width="120" alt="" />
+                        </a>
+                    </span>
+
+                    <a href="tel:+33633372424" class="callusbtn"><i class="fa fa-phone" aria-hidden="true" style="margin-right: 40px;"></i></a>
+                    <a class="" href="https://wa.me/22991953795?text=Information&nbsp;sur&nbsp;Fideros" target="_blank" style="color: #a9a9a9;font-size: 21px; position: absolute; right: 5px; top: 0px; transition: all 0.4s ease-in-out 0s; z-index: 102; padding: 9px 14px;">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Header -->
+
+
+        <div class="horizontal-main clearfix">
+            <div class="horizontal-mainwrapper container clearfix">
+                <div class="desktoplogo">
+                    <a href="@Url.Action("Index", "Global")" class="light-logo"><img src="~/assets/images/brand/Fideros_invest_logo.png" alt=""></a>
+                    <a href="@Url.Action("Index", "Global")" class="dark-logo"><img src="~/assets/images/brand/Fideros_invest_logo.png" alt=""></a>
+                </div>
+
+                <!--Nav-->
+                <nav class="horizontalMenu clearfix d-md-flex">
+                    <div class="overlapblackbg"></div>
+                    <ul class="horizontalMenu-list">
+                        <li aria-haspopup="true">
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                        </li>
+                        <li aria-haspopup="true">
+                            <span><a class="btn btn-primary" href="@Url.Action("AboutFideros", "Global")"><b>À Propos de Fideros</b></a></span>
+                        </li>
+                        <li aria-haspopup="true">
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                        </li>
+                        <li aria-haspopup="true">
+                            <span><a class="btn btn-secondary" href="@Url.Action("WebContact", "Global")"><b>Investir dans Fideros</b></a></span>
+                        </li>
+                        <li aria-haspopup="true">
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                        </li>
+                        <li aria-haspopup="true">
+                            <span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span>
+                            <span><a class="btn btn-info"><b>Nous Appeler</b>&nbsp;<span class="fa fa-caret-down m-0"></span></a></span>
+                            <ul class="sub-menu">
+                                <li aria-haspopup="true">
+                                    <a class="social-icon" href="tel:+33633372424" target="_blank">
+                                        <span style="font-family:'Maven Pro';font-size: 15px;">
+                                            <i class="fa fa-phone"></i>
+                                            :&nbsp;+33 6 33 37 24 24
+                                        </span>
+                                    </a>
+                                </li>
+                                <li aria-haspopup="true">
+                                    <a class="social-icon" href="https://wa.me/22991953795?text=Information&nbsp;sur&nbsp;Fideros" target="_blank">
+                                        <span style="font-family:'Maven Pro';font-size: 15px;">
+                                            <i class="fa fa-whatsapp"></i>
+                                            :&nbsp;+229 91 95 37 95
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li aria-haspopup="true">
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                        </li>
+                        <li aria-haspopup="true">
+                            <span>
+                                <a class="btn btn-tertiary" href="@Url.Action("Login", "Account")">
+                                    <i class="fa fa-sign-in me-1"></i>&nbsp;Connexion
+                                </a>
+                            </span>
+                        </li>
+                    </ul>
+                </nav>
+                <!--Nav-->
+            </div>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <!--Footer Section-->
+    <section>
+        <footer class="bg-dark text-white">
+            <div class="bg-dark text-white p-0">
+                <div class="container">
+                    <div class="row d-flex">
+                        <div class="col-lg-8 col-sm-12  mt-2 mb-2 text-start ">
+                            Copyright © 2024 <a href="@Url.Action("Index", "Global")" class="fs-14 text-primary">Fideros</a>, All rights reserved.
+                        </div>
+                        <div class="col-lg-4 col-sm-12 ms-auto mb-2 mt-2">
+                            <ul class="social mb-0">
+                                <li>
+                                    <a class="social-icon" href="tel:+33633372424" target="_blank">
+                                        <i class="fa fa-phone me-1"></i>
+                                        <span>
+                                            :&nbsp;+33 6 33 37 24 24
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="social-icon" href="https://wa.me/22991953795?text=Information&nbsp;sur&nbsp;Fideros" target="_blank">
+                                        <i class="fa fa-whatsapp"></i>
+                                        <span>
+                                            :&nbsp;+229 91 95 37 95
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-dark text-white p-0 border-top">
+                <div class="container">
+                    <div class="p-2 text-center footer-links">
+                        <a href="@Url.Action("Legal-Mention", "Global")" class="btn btn-link">Mentions Légales</a>
+                        <a href="@Url.Action("Privacy-notice", "Global")" class="btn btn-link">Confidentialité</a>
+                        <a href="@Url.Action("WebContact", "Global")" class="btn btn-link">Investir dans le Projet Fideros</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!--Footer Section-->
+    <!-- Back to top -->
+    <a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
+
+    @{
+        if (TempData["CONSENT_COOKIE"].ToString() == bool.FalseString && !Constants.PageWithNoCookiesConsent.Exists(x => x == TempData["ACTION_NAME"].ToString().ToLower()))
+        {
+
+            @Html.Partial("_CookiesConsent")
+        }
+    }
+
+    <!-- JQuery js-->
+    <script src="~/assets/js/vendors/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="~/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--JQuery Sparkline Js-->
+    <script src="~/assets/js/vendors/jquery.sparkline.min.js"></script>
+
+    <!-- Circle Progress Js-->
+    <script src="~/assets/js/vendors/circle-progress.min.js"></script>
+
+    <!-- Star Rating Js-->
+    <script src="~/assets/plugins/ratings-2/jquery.star-rating.js"></script>
+    <script src="~/assets/plugins/ratings-2/star-rating.js"></script>
+
+    <!--Owl Carousel js -->
+    <script src="~/assets/plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="~/assets/js/owl-carousel.js"></script>
+
+    <!--Horizontal Menu-->
+    <script src="~/assets/plugins/Horizontal2/Horizontal-menu/horizontal.js"></script>
+
+    <!--JQuery TouchSwipe js-->
+    <script src="~/assets/js/jquery.touchSwipe.min.js"></script>
+
+    <!--Select2 js -->
+    <script src="~/assets/plugins/select2/select2.full.min.js"></script>
+    <script src="~/assets/js/select2.js"></script>
+
+    @*<!-- Cookie js -->
+    <script src="~/assets/plugins/cookie/jquery.ihavecookies.js"></script>
+    <script src="~/assets/plugins/cookie/cookie.js"></script>*@
+
+    <!-- P-scroll bar Js-->
+    <script src="~/assets/plugins/pscrollbar/pscrollbar.js"></script>
+
+    <!-- sticky Js-->
+    <script src="~/assets/js/sticky.js"></script>
+    <script src="~/assets/js/custom-sticky.js"></script>
+
+    <!-- Swipe Js-->
+    <script src="~/assets/js/swipe.js"></script>
+
+    <!-- theme color Js-->
+    <script src="~/assets/js/themeColors.js"></script>
+
+    <!-- Switcher Styles Js-->
+    <script src="~/assets/js/switcher-styles.js"></script>
+
+    <!-- Custom Js-->
+    <script src="~/assets/js/custom.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#mc-form").submit(function (event) {
+
+                $("#divnewsletter").addClass("text-success");
+                //var formdata = JSON.stringify({ "EmailAddress": $("#EmailAddress").val()});
+                var emailAddress = $("#EmailAddress").val();
+                if (emailAddress == '') {
+                    $("#divnewsletter").addClass("text-danger");
+                    $("#divnewsletter").html("Veuillez saisir une adresse email.");
+                    $("#BtnRegisterNewsletter").removeAttr("disabled");
+                    setTimeout(function () { $("#divnewsletter").html(""); }, 10000);
+                }
+                else {
+                    var jqxhr = $.post("/global/RegisterNewsletter", { "EmailAddress": emailAddress });
+                    jqxhr.done(function (data) {
+                        $("#divnewsletter").addClass("text-success");
+                        $("#divnewsletter").html("Votre abonnement à la newsletter a bien été pris en compte.");
+                        $("#BtnRegisterNewsletter").removeAttr("disabled");
+                        setTimeout(function () { $("#divnewsletter").html(""); }, 10000);
+                    });
+                    jqxhr.fail(function (data) {
+                        $("#divnewsletter").html("Erreur enregistrement à la newsletter. Veuillez recommencer.");
+                        $("#BtnRegisterNewsletter").removeAttr("disabled");
+                        $("#divnewsletter").addClass("text-danger");
+                        setTimeout(function () { $("#divnewsletter").html(""); }, 10000);
+                    });
+                    jqxhr.always(function () {
+                        //Always
+                    });
+                }
+                event.preventDefault();
+            });
+
+            //< !--Cookies AcceptConsent. -- >
+            $("#gdpr-cookie-accept").click(function () {
+                var link = '/Global/CookiesConsent'
+                $.ajax({
+                    type: 'GET',
+                    url: link,
+                    dataType: 'json',
+                    data: {},
+                    success: function (response) {
+                        $('#gdpr-cookie-message').hide();
+                    },
+                    error: function (response) {
+                    }
+                });
+                return false;
+            });
+
+            $(".thumb").bind("touchstart", (e) => e.currentTarget.click());
+
+            function displayNames(input, target) {
+                const output = document.getElementById(target);
+                output.innerHTML = '';
+                const files = input.files
+                for (let i = 0; i < files.length; i++) {
+                    let file = files.item(i)
+                    let el = document.createElement('li');
+                    el.innerText = file.name;
+                    output.appendChild(el);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

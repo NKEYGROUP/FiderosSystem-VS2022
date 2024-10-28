@@ -1,0 +1,213 @@
+﻿@using App.Mvc.Invest.Fideros.Models;
+@using App.Mvc.Invest.Fideros.Utils;
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@model App.Mvc.Invest.Fideros.Models.WebContactObject
+@{
+    ViewBag.Title = "Fideros Investment - Demande d'informations";
+    ViewBag.MetaDescription = "Prendre contact avec l'équipe Fideros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Breadcrumb-->
+<div>
+    <div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner2.jpg">
+        <div class="header-text mb-0">
+            <div class="container">
+                <div class="text-center text-white ">
+                    <h1 class="mb-1" style="font-size: 3rem; font-weight:800; font-family:'Maven Pro';">FORMULAIRE DE CONTACT</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Breadcrumb-->
+<!--Contact-->
+<div class="sptb">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xl-4 col-lg-12 col-md-12 text-white">
+                <div class="support-service bg-primary br-2 mb-4">
+                    <a class="text-white" href="tel:+33633372424" target="_blank">
+                        <i class="fa fa-phone"></i>
+                        <h6>+33 6 33 37 24 24</h6>
+                        <p>CEO Fideros</p>
+                    </a>
+                </div>
+                <div class="support-service bg-primary br-2 mb-4 ">
+                    <a class="text-white" href="https://wa.me/22991953795?text=Information&nbsp;sur&nbsp;Fideros" target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                        <h6>+229 91 95 37 95</h6>
+                        <p>CEO Fideros</p>
+                    </a>
+                </div>
+                <div class="support-service bg-secondary br-2">
+                    <a class="text-white" href="mailto:investment@fideros.com" target="_blank">
+                    <i class="fa fa-envelope-o"></i>
+                    <h6>investment@fideros.com</h6>
+                    <p>CEO Fideros</p></a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 mx-auto d-block">
+                <div class="card mb-0">
+                    <div class="card-body">
+                        <p class="font-weight-semibold mb-0" style="font-size:16px;">
+                            VOUS SOUHAITEZ INVESTIR DANS LE PROJET FIDEROS?
+                            <br />
+                            VEUILLEZ REMPLIR CE FORMULAIRE AFIN D'OBTENIR NOTRE BUSINESS PLAN COMPLET 2024&nbsp;/&nbsp;2027.
+                        </p> <br />
+                        @if ((string)ViewBag.PageControle == "Success")
+                        {
+                            <br />
+                            <p>
+                                @Html.Partial("_WebContactSuccess")
+                            </p>
+                        }
+                        else
+                        {
+                            using (Html.BeginForm((string)ViewBag.FormAction, "Global", new { id = (string)ViewBag.FormID }, FormMethod.Post, true, new { @id = "contact-form", @name = "contact-form", @enctype = "multipart/form-data" }))
+                            {
+                                <p>* Informations obligatoires</p>
+                                @Html.AntiForgeryToken()
+                                <p>
+                                    @ViewBag.Message
+                                </p>
+                                <p style="font-weight:700;color:red">
+                                    @Html.ValidationSummary(true, "Veuillez saisir les informations obligatoires.")
+                                </p>
+                                {
+                                    string errorMessage = "";
+                                    foreach (var modelStateValue in ViewData.ModelState.Values)
+                                    {
+                                        foreach (var error in modelStateValue.Errors)
+                                        {
+                                            // Do something useful with these properties
+                                            if (string.IsNullOrEmpty(errorMessage))
+                                            {
+                                                errorMessage = error.ErrorMessage;
+                                            }
+                                            else
+                                            {
+                                                errorMessage = errorMessage + ", " + error.ErrorMessage;
+                                            }
+                                        }
+                                    }
+
+                                    <p style="font-weight:lighter;color:red">
+                                        @errorMessage
+                                    </p>
+
+                                }
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Title, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.Title, null, new { @class = "form-label text-danger" })
+                                    @Html.DropDownListFor(m => m.Title, new List<SelectListItem>() {  new SelectListItem() { Text = "*Civilité", Value = "", Selected= true },
+                            new SelectListItem() { Text = "Madame", Value = "MME" },
+                            new SelectListItem() { Text = "Monsieur", Value = "M" }}, new { @type = "text", @class = "form-control", @placeholder = "Civilité" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Firstname, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.Firstname, null, new { @style = "font-weight:lighter;color:red", @class = "form-label text-danger" })
+                                    @Html.TextBoxFor(m => m.Firstname, new { @type = "text", @class = "form-control", @placeholder = "*Prénom", @maxLength = "255" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Lastname, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.Lastname, null, new { @class = "form-label text-danger", @style = "font-weight:lighter;color:#ff2b88" })
+                                    @Html.TextBoxFor(m => m.Lastname, new { @type = "text", @class = "form-control", @placeholder = "*Nom", @maxLength = "255" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.EmailAddress, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.EmailAddress, null, new { @class = "form-label text-danger", @style = "font-weight:lighter;color:#ff2b88" })
+                                    @Html.TextBoxFor(m => m.EmailAddress, new { @type = "text", @class = "form-control", @placeholder = "*Adresse email", @maxLength = "255" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Phone, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.Phone, null, new { @class = "form-label text-danger", @style = "font-weight:lighter;color:#ff2b88" })
+                                    @Html.TextBoxFor(m => m.Phone, new { @type = "text", @class = "form-control", @placeholder = "Téléphone", @maxLength = "255" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.CompanyName, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.CompanyName, null, new { @style = "font-weight:lighter;color:red", @class = "form-label text-danger" })
+                                    @Html.TextBoxFor(m => m.CompanyName, new { @type = "text", @class = "form-control", @placeholder = "*Entreprise", @maxLength = "255" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.WebSite, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.WebSite, null, new { @style = "font-weight:lighter;color:red", @class = "form-label text-danger" })
+                                    @Html.TextBoxFor(m => m.WebSite, new { @type = "text", @class = "form-control", @placeholder = "http://monorganisation.com", @maxLength = "255" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.CountryCode, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.CountryCode, null, new { @class = "form-label text-danger", @style = "font-weight:lighter;color:#ff2b88" })
+                                    @Html.DropDownListFor(m => m.CountryCode, StaticFunctions.GetCountryList(""), new { @type = "text", @OnChange = "", @class = "form-control select2-flag-search", @placeholder = "*Pays" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.MessageType, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.MessageType, null, new { @class = "form-label text-danger", @style = "font-weight:lighter;color:#ff2b88" })
+                                    @Html.DropDownListFor(m => m.MessageType, StaticFunctions.GetMessageTypeList("WEB_CONTACT_MSG_TYPE_INVEST", "", true), new { @type = "text", @class = "form-control", @placeholder = "*Type message" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Message, new { @class = "form-label text-dark" })
+                                    @Html.ValidationMessageFor(m => m.Message, null, new { @class = "form-label text-danger", @style = "font-weight:lighter;color:#ff2b88" })
+                                    @Html.TextAreaFor(m => m.Message, new { @type = "text", @class = "form-control", @placeholder = "*Message", @maxLength = "500" })
+                                </div>
+                                <br />
+                                @Html.TextBoxFor(m => m.Uploads, new { @type = "file", @placeholder = "Pièce jointe", @class = "form-control" })
+                                <br />
+                                <div class="form-group">
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input">
+                                        @Html.CheckBoxFor(m => m.AcceptConditions, new { @type = "checkbox", @class = "custom-control-input" })
+                                        @Html.LabelFor(m => m.AcceptConditions, new { @class = "custom-control-label text-dark" })
+
+
+                                        <br />
+                                        <span>En validant ce formulaire, sur notre site, vous consentez à notre @Html.ActionLink("Politique de cookies", "Cookies-notice", "Global", null, new { @style = "text-decoration:underline", @target = "_blank" }) et @Html.ActionLink("Politique de confidentialité", "Privacy-notice", "Global", null, new { @style = "text-decoration:underline", @target = "_blank" }) et acceptez d'être contacté(e) par nos Services. Vous consentez à recevoir des communications de la part de Fideros et ses filiales. Vous pouvez vous en désinscrire à tout moment en suivant la procédure indiquée dans notre @Html.ActionLink("Politique de confidentialité", "Privacy-notice", "Global", null, new { @style = "text-decoration:underline", @target = "_blank" }).</span>
+
+                                        <br />
+                                        <br />
+                                    </label>
+                                    <br />
+                                    <br />
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Captcha.CodeCtrl)
+                                        <img alt="Captcha" src="data:image/png;base64, @Html.DisplayTextFor(m => m.Captcha.ImgBase64)" style="" />
+                                        @Html.TextBoxFor(model => model.Captcha.CodeCtrl, new { @id = "form_Captcha", @type = "text", @name = "Captcha", @class = "form-control", @style = "text-transform:uppercase", @placeholder = "*", @maxlength = "10" })
+                                        <div class="help-block with-errors">@Html.ValidationMessageFor(model => model.Captcha.CodeCtrl, "", new { @class = "text-danger" })</div>
+                                    </div>
+                                </div>
+                                <div class="form-footer mt-2">
+                                    <input type="submit" name="SigBtn" value="Envoyer" class="btn btn-primary btn-block">
+                                </div>
+                                <br />
+                                <br />
+                                @Html.HiddenFor(m => m.Password, new { @value = "xxxxxx" })
+                                @Html.HiddenFor(m => m.ConfirmPassword, new { @value = "xxxxxx" })
+                                @Html.HiddenFor(m => m.Id)
+                                @Html.HiddenFor(m => m.Captcha.Code)
+                                @Html.HiddenFor(m => m.Captcha.ImgBase64)
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Contact-->
+<script>
+    function FormSubsOnSubmit(form) {
+        var isValid = $("#formsubs").validate().checkForm();
+        if (isValid) {
+            form.SigBtn.disabled = true;
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+</script>

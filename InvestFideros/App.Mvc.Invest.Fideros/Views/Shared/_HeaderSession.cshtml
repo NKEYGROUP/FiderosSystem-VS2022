@@ -1,0 +1,119 @@
+﻿<!--Loader-->
+<div id="global-loader"><img src="../assets/images/other/loader.svg" class="loader-img floating" alt=""></div>
+
+<!--Topbar-->
+<div class="header-main">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-7 col-sm-4 col-5">
+                    <div class="top-bar-left d-flex">
+                        <div class="clearfix">
+                            <ul class="socials">
+                                <li>
+                                    <a class="social-icon text-dark" href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="social-icon text-dark" href="" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a>
+                                </li>
+                                <li>
+                                    <a class="social-icon text-dark" href="https://wa.me/33783813500?text=Information&nbsp;sur&nbsp;Fideros" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clearfix">
+                            <ul class="contact border-left">
+                                <li class="mr-5 d-lg-none">
+                                    <a href="https://wa.me/33783813500?text=Information&nbsp;sur&nbsp;Fideros" class="callnumber text-dark"><span><i class="fa fa-whatsapp mr-1"></i>: +33 83.81.35.00</span></a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                        <div class="clearfix">
+                            <ul class="contact border-left">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5 col-sm-8 col-7">
+                    <div class="top-bar-right">
+                        <ul class="custom">
+                            <li>
+                                <a href="@Url.Action("Login", "Account")" class="text-dark"><i class="fa fa-sign-in mr-1"></i><span>Se connecter</span></a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Register", "Account")" class="text-dark"><i class="fa fa fa-user mr-1"></i><span>Créer compte</span></a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Webcontact", "Global")" class="text-dark"><i class="fa fa-phone mr-1"></i><span>Nous contacter </span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Header -->
+    <div class="horizontal-header clearfix ">
+        <div class="container">
+            <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
+            <a href="@Url.Action("Index", "Global")">
+                <span class="smllogo"><img src="../assets/images/brand/Fideros_invest_logo.png" alt="Logo Fideros Business" style="width:152px; height:40px" width="152" , height="40" /></span>
+            </a>
+        </div>
+    </div>
+    <!-- Mobile Header -->
+
+    <div class="sticky">
+        <div class="horizontal-main clearfix">
+            <div class="horizontal-mainwrapper container clearfix">
+                <div class="desktoplogo" style="min-width: 100px;width:12vw">
+                    <a href="@Url.Action("Index", "Global")"><img src="../assets/images/brand/Fideros_invest_logo.png" alt="Logo Fideros Business" style="width:152px; height:40px" width="152" , height="40"></a>
+                </div>
+                <!--Nav-->
+                <nav class="horizontalMenu clearfix d-md-flex">
+                    <ul class="horizontalMenu-list">
+                       <li aria-haspopup="true"><a href="@Url.Action("Webcontact", "Global")">Nous contacter <span class="wsarrow"></span></a></li>
+                        <li aria-haspopup="true" class="d-lg-none mt-5 pb-5 mt-lg-0">
+                            <span><a class="btn btn-pink" href="@Url.Action("OrganizationList", "Directory")"><b><i class="fa fa-bullhorn" style="color:#fff;"></i>&nbsp;Votre Entreprise</b></a></span>
+                        </li>
+                        <li aria-haspopup="true" class="d-lg-none mt-1 pb-5 mt-lg-0">
+                            <span><a class="btn btn-primary" href="@Url.Action("SearchItems", "Cat",new { catRef="ENTERPRISE000" , ctryID = (string)TempData["AdCountry"]??"0" , town = (string)TempData["Adtown"]})"><b><i class="fa fa-bullhorn" style="color:#fff;"></i>&nbsp;Salon virtuel</b></a></span>
+                        </li>
+                       
+
+                    </ul>
+                    <ul class="mb-0">
+                        <li aria-haspopup="true" class="mt-5 d-none d-lg-block ">
+                            <span><a class="btn btn-pink" href="@Url.Action("OrganizationList", "Directory")"><b>Votre Entreprise</b></a></span>
+                        </li>
+                    </ul>
+                    <ul class="mb-0">
+                        <li aria-haspopup="true" class="mt-5 d-none d-lg-block ">
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                        </li>
+                    </ul>
+                    <ul class="mb-0">
+                        <li aria-haspopup="true" class="mt-5 d-none d-lg-block">
+                            <span><a class="btn btn-primary" href="@Url.Action("SearchItems", "Cat",new { catRef="ENTERPRISE000" , ctryID = (string)TempData["AdCountry"]??"0" , town = (string)TempData["Adtown"]})"><b><i class="fa fa-bullhorn" style="color:#fff;"></i>&nbsp;Salon virtuel</b></a></span>
+                        </li>
+                    </ul>
+                    <ul class="mb-0">
+                        <li aria-haspopup="true" class="mt-5 d-none d-lg-block ">
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                        </li>
+                    </ul>
+                  
+                    <ul class="mb-0">
+                        <li aria-haspopup="true" class="mt-5 d-none d-lg-block ">
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                        </li>
+                    </ul>
+                </nav>
+                <!--Nav-->
+            </div>
+        </div>
+    </div>
+</div>
+

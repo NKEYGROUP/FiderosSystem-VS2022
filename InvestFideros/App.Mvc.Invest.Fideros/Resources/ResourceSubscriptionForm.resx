@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="accept_conditions_error_message" xml:space="preserve">
+    <value>Veuillez accepter les conditions d'utilisation</value>
+  </data>
+  <data name="accept_conditions_label" xml:space="preserve">
+    <value>Conditions d'utilisation</value>
+  </data>
+  <data name="activityArea_error_message" xml:space="preserve">
+    <value>Secteur d'activité obligatoire</value>
+  </data>
+  <data name="activitydescription_error_message" xml:space="preserve">
+    <value>Activité obligatoire</value>
+  </data>
+  <data name="activitydescription_label" xml:space="preserve">
+    <value>Description Activité</value>
+  </data>
+  <data name="activity_code_error_message" xml:space="preserve">
+    <value>Activité obligatoire</value>
+  </data>
+  <data name="activity_code_label" xml:space="preserve">
+    <value>Activité</value>
+  </data>
+  <data name="activity_label" xml:space="preserve">
+    <value>Activité</value>
+  </data>
+  <data name="address_line1_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Adresse'</value>
+  </data>
+  <data name="address_line1_label" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="address_line2_label" xml:space="preserve">
+    <value>Compl adr</value>
+  </data>
+  <data name="address_postal_code_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Code Postal'</value>
+  </data>
+  <data name="address_postal_code_label" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="alertName_error_message" xml:space="preserve">
+    <value>! Veuillez saisir le nom agent d'alerte</value>
+  </data>
+  <data name="alertName_label" xml:space="preserve">
+    <value>Nom agent alert</value>
+  </data>
+  <data name="attachedFile_label" xml:space="preserve">
+    <value>Attachez fichier</value>
+  </data>
+  <data name="BlogCatalogName_error_message" xml:space="preserve">
+    <value>Thématique du blog obligatoire !</value>
+  </data>
+  <data name="BlogCatalogName_label" xml:space="preserve">
+    <value>Thématique du blog</value>
+  </data>
+  <data name="BlogitemDescription_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Description'</value>
+  </data>
+  <data name="BlogitemDescription_label" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="BlogitemName_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Titre'</value>
+  </data>
+  <data name="BlogitemName_label" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="BlogSubCatalogName_error_message" xml:space="preserve">
+    <value>Sous-thématique obligatoire !</value>
+  </data>
+  <data name="BlogSubCatalogName_label" xml:space="preserve">
+    <value>Sous-thématique</value>
+  </data>
+  <data name="candidateSalary_label" xml:space="preserve">
+    <value>Salaire souhaité</value>
+  </data>
+  <data name="captcha_error_message" xml:space="preserve">
+    <value>Caractères re-saisis incorrects. Reessayez !</value>
+  </data>
+  <data name="captcha_label" xml:space="preserve">
+    <value>Veuillez re-saisir les caractères affichés</value>
+  </data>
+  <data name="CatalogDescription_error_message" xml:space="preserve">
+    <value>Description obligatoire !</value>
+  </data>
+  <data name="CatalogName_error_message" xml:space="preserve">
+    <value>Catégorie obligatoire !</value>
+  </data>
+  <data name="CatalogName_label" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="clientOfferRef_label" xml:space="preserve">
+    <value>Référence offre à rappeler</value>
+  </data>
+  <data name="company_holding_name_label" xml:space="preserve">
+    <value>Fédération</value>
+  </data>
+  <data name="company_legal_form_label" xml:space="preserve">
+    <value>Forme leg.</value>
+  </data>
+  <data name="company_name_error_message" xml:space="preserve">
+    <value>Organisation obligatoire</value>
+  </data>
+  <data name="company_name_label" xml:space="preserve">
+    <value>Organisation</value>
+  </data>
+  <data name="company_register_number_label" xml:space="preserve">
+    <value>Siret</value>
+  </data>
+  <data name="company_type_label" xml:space="preserve">
+    <value>Type organisation</value>
+  </data>
+  <data name="confirm_password_compare_message" xml:space="preserve">
+    <value>Confirmation de mot de passe incorrecte</value>
+  </data>
+  <data name="confirm_password_error_message" xml:space="preserve">
+    <value>Veuillez confirmer le mot de passe</value>
+  </data>
+  <data name="confirm_password_label" xml:space="preserve">
+    <value>Confirmer mot de passe</value>
+  </data>
+  <data name="contact_error_message" xml:space="preserve">
+    <value>Contact obligatoire !</value>
+  </data>
+  <data name="contact_preference_label" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="CountryCodeItem_error_message" xml:space="preserve">
+    <value>! Veuillez choisir 'Pays' </value>
+  </data>
+  <data name="CountryCodeItem_label" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="countryOffer_error_message" xml:space="preserve">
+    <value>! Veuillez choisir le Pays</value>
+  </data>
+  <data name="countryOffer_label" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="country_label" xml:space="preserve">
+    <value>Pays de résidence </value>
+  </data>
+  <data name="cvDisplay_label" xml:space="preserve">
+    <value>Publié CV?</value>
+  </data>
+  <data name="cvfile_label" xml:space="preserve">
+    <value>CV en PJ</value>
+  </data>
+  <data name="DateDebut_label" xml:space="preserve">
+    <value>Date début</value>
+  </data>
+  <data name="DateFin_label" xml:space="preserve">
+    <value>Date fin</value>
+  </data>
+  <data name="DateM_error_message" xml:space="preserve">
+    <value>! Veuillez saisir le mois</value>
+  </data>
+  <data name="dateofbirth_error_message" xml:space="preserve">
+    <value>Date  naiss. obligatoire</value>
+  </data>
+  <data name="dateofbirth_label" xml:space="preserve">
+    <value>Date  naiss.</value>
+  </data>
+  <data name="DateY_error_message" xml:space="preserve">
+    <value>! Veuillez saisir l'année</value>
+  </data>
+  <data name="degreeID_error_message" xml:space="preserve">
+    <value>! Veuillez saisir le niveau d'étude</value>
+  </data>
+  <data name="degreeID_label" xml:space="preserve">
+    <value>Niv étude</value>
+  </data>
+  <data name="drivingLicence_label" xml:space="preserve">
+    <value>Permis </value>
+  </data>
+  <data name="educationCompletionDate_error_message" xml:space="preserve">
+    <value>! Veuillez saisir l'année d'obtention de votre diplôme</value>
+  </data>
+  <data name="educationCompletionDate_label" xml:space="preserve">
+    <value>Anneé diplôme</value>
+  </data>
+  <data name="educationDescription_label" xml:space="preserve">
+    <value>Desc. diplôme</value>
+  </data>
+  <data name="email_address_error_message" xml:space="preserve">
+    <value>Adresse email obligatoire</value>
+  </data>
+  <data name="email_address_format_error_message" xml:space="preserve">
+    <value>Format email incorrect</value>
+  </data>
+  <data name="email_address_label" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="email_format_error_message" xml:space="preserve">
+    <value>Format email incorrect</value>
+  </data>
+  <data name="email_object_error_message" xml:space="preserve">
+    <value>Objet obligatoire</value>
+  </data>
+  <data name="email_object_label" xml:space="preserve">
+    <value>Objet</value>
+  </data>
+  <data name="email_subject_error_message" xml:space="preserve">
+    <value>Sujet obligatoire</value>
+  </data>
+  <data name="email_subject_label" xml:space="preserve">
+    <value>Sujet</value>
+  </data>
+  <data name="employee_label" xml:space="preserve">
+    <value>Nombre emplyés</value>
+  </data>
+  <data name="employmentStatut_error_message" xml:space="preserve">
+    <value>! Veuillez saisir le profil souhaité</value>
+  </data>
+  <data name="employmentStatut_label" xml:space="preserve">
+    <value>Profil souhaité</value>
+  </data>
+  <data name="employmentType_error_message" xml:space="preserve">
+    <value>Type contrat obligatoire</value>
+  </data>
+  <data name="employmentType_label" xml:space="preserve">
+    <value>Type contrat</value>
+  </data>
+  <data name="empTypeCandAlert_label" xml:space="preserve">
+    <value>Type contrat</value>
+  </data>
+  <data name="endDateExp_error_message" xml:space="preserve">
+    <value>Date de fin obligatoire</value>
+  </data>
+  <data name="endDateExp_label" xml:space="preserve">
+    <value>Date fin</value>
+  </data>
+  <data name="error_message" xml:space="preserve">
+    <value>Une erruer s'est produite dans le traitement de votre requête</value>
+  </data>
+  <data name="executive_label" xml:space="preserve">
+    <value>Cadre</value>
+  </data>
+  <data name="fax_label" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="firstname_error_message" xml:space="preserve">
+    <value>Prénom obligatoire</value>
+  </data>
+  <data name="firstname_label" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="gbobal_error_message" xml:space="preserve">
+    <value>Cette information est obligatoire.</value>
+  </data>
+  <data name="identifier_error_message" xml:space="preserve">
+    <value>Identifiant obligatoire</value>
+  </data>
+  <data name="identifier_label" xml:space="preserve">
+    <value>Identifiant</value>
+  </data>
+  <data name="institution_error_message" xml:space="preserve">
+    <value>! Veuillez saisir l'etablissement</value>
+  </data>
+  <data name="institution_label" xml:space="preserve">
+    <value>Etablismt</value>
+  </data>
+  <data name="isapproved_label" xml:space="preserve">
+    <value>Approuvé?</value>
+  </data>
+  <data name="islockedout_label" xml:space="preserve">
+    <value>Verrouillé?</value>
+  </data>
+  <data name="isprincipal_label" xml:space="preserve">
+    <value>Princial?</value>
+  </data>
+  <data name="itemDescription_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Description'</value>
+  </data>
+  <data name="itemDescription_label" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="itemName_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Titre'</value>
+  </data>
+  <data name="itemName_label" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="jobActivitydescription_label" xml:space="preserve">
+    <value>Description activité</value>
+  </data>
+  <data name="jobCategoryCandAlert_label" xml:space="preserve">
+    <value>Secteur d'act.</value>
+  </data>
+  <data name="jobCategoryCandAler_label" xml:space="preserve">
+    <value>Secteur d'act.</value>
+  </data>
+  <data name="jobCategory_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Secteur activité'</value>
+  </data>
+  <data name="jobCategory_label" xml:space="preserve">
+    <value>Secteur d'act.</value>
+  </data>
+  <data name="jobCompanyName_label" xml:space="preserve">
+    <value>Nom Entreprise</value>
+  </data>
+  <data name="jobCompany_holding_name_label" xml:space="preserve">
+    <value>Fédération</value>
+  </data>
+  <data name="jobDescription_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Description du poste'</value>
+  </data>
+  <data name="jobDescription_label" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="jobDisplay_label" xml:space="preserve">
+    <value>Publiée?</value>
+  </data>
+  <data name="jobDuration_label" xml:space="preserve">
+    <value>Durée</value>
+  </data>
+  <data name="jobIdentifier_label" xml:space="preserve">
+    <value>Identifiant</value>
+  </data>
+  <data name="jobOfferNote_label" xml:space="preserve">
+    <value>Autres infos</value>
+  </data>
+  <data name="jobOfferReference_label" xml:space="preserve">
+    <value>Référence offre à rappeler</value>
+  </data>
+  <data name="jobPosition_label" xml:space="preserve">
+    <value>Département ou région</value>
+  </data>
+  <data name="jobSkillLevel_label" xml:space="preserve">
+    <value>Niveau profil</value>
+  </data>
+  <data name="jobStartDate_label" xml:space="preserve">
+    <value>Date début</value>
+  </data>
+  <data name="jobTitle_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Titre de l'offre'</value>
+  </data>
+  <data name="jobTitle_label" xml:space="preserve">
+    <value>Titre offre</value>
+  </data>
+  <data name="jobWebLink_label" xml:space="preserve">
+    <value>Lien web de l'offre sur votre site</value>
+  </data>
+  <data name="keywords_error_message" xml:space="preserve">
+    <value>! Veuillez saisir les mots clésde votre recherche</value>
+  </data>
+  <data name="keywords_label" xml:space="preserve">
+    <value>Mots clés</value>
+  </data>
+  <data name="LangSkillLevel_label" xml:space="preserve">
+    <value>Niv. maitrise</value>
+  </data>
+  <data name="language_error_message" xml:space="preserve">
+    <value>! Veuillez choisir votre langue</value>
+  </data>
+  <data name="language_label" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="LangUsed" xml:space="preserve">
+    <value>Utilisation</value>
+  </data>
+  <data name="LangYearOfExpID_error_message" xml:space="preserve">
+    <value> Veuillez saisir le nombre d'années d'utilisation</value>
+  </data>
+  <data name="langYearOfExp_label" xml:space="preserve">
+    <value>Nbre  an. util. </value>
+  </data>
+  <data name="lastname_error_message" xml:space="preserve">
+    <value>Nom obligatoire</value>
+  </data>
+  <data name="lastname_label" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="levelLanguage_label" xml:space="preserve">
+    <value>Niv. langue</value>
+  </data>
+  <data name="locartionDescription_label" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="LocationItem_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Adresse'</value>
+  </data>
+  <data name="LocationItem_label" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="location_label" xml:space="preserve">
+    <value>Zone géo.</value>
+  </data>
+  <data name="loyaltyDescriptionp_label" xml:space="preserve">
+    <value>Description pg points</value>
+  </data>
+  <data name="loyaltyDescription_error_messae" xml:space="preserve">
+    <value>Description obligatoire !</value>
+  </data>
+  <data name="loyaltyDescription_label" xml:space="preserve">
+    <value>Description coupon</value>
+  </data>
+  <data name="loyaltyp_label" xml:space="preserve">
+    <value>Titre pg points</value>
+  </data>
+  <data name="loyalty_error_message" xml:space="preserve">
+    <value>Titre obligatoire !</value>
+  </data>
+  <data name="loyalty_label" xml:space="preserve">
+    <value>Titre coupon</value>
+  </data>
+  <data name="lpQuantity_label" xml:space="preserve">
+    <value>Quantité</value>
+  </data>
+  <data name="lVCurrency_label" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="lVDiscountInfo_label" xml:space="preserve">
+    <value>Infos réduction</value>
+  </data>
+  <data name="lVDiscountType_error_message" xml:space="preserve">
+    <value>Type de réduction obligatoire.</value>
+  </data>
+  <data name="lVDiscountType_label" xml:space="preserve">
+    <value>Type de réduction</value>
+  </data>
+  <data name="lVDiscount_label" xml:space="preserve">
+    <value>Réduction</value>
+  </data>
+  <data name="lVGifInfo_label" xml:space="preserve">
+    <value>Infos cadeau</value>
+  </data>
+  <data name="lvGiftAmount_error_message" xml:space="preserve">
+    <value>Veuillez saisir montant</value>
+  </data>
+  <data name="lvGiftAmount_label" xml:space="preserve">
+    <value>Montant cadeau</value>
+  </data>
+  <data name="lVType_error_message" xml:space="preserve">
+    <value>Veuillez choisir le type de coupon</value>
+  </data>
+  <data name="lVType_label" xml:space="preserve">
+    <value>Type coupon</value>
+  </data>
+  <data name="major_error_message" xml:space="preserve">
+    <value>! Veuillez saisir le diplôme</value>
+  </data>
+  <data name="major_label" xml:space="preserve">
+    <value>Formation</value>
+  </data>
+  <data name="maritalStatus_label" xml:space="preserve">
+    <value>Statut marital</value>
+  </data>
+  <data name="Media_description_label" xml:space="preserve">
+    <value>Description du document</value>
+  </data>
+  <data name="Media_label" xml:space="preserve">
+    <value>Titre du document</value>
+  </data>
+  <data name="Media_title_error_message" xml:space="preserve">
+    <value>Titre du document obligatoire.</value>
+  </data>
+  <data name="message0_label" xml:space="preserve">
+    <value>Votre message</value>
+  </data>
+  <data name="message_error_message" xml:space="preserve">
+    <value>Message obligatoire</value>
+  </data>
+  <data name="message_error_message_type" xml:space="preserve">
+    <value>Type de message obligatoire</value>
+  </data>
+  <data name="message_label" xml:space="preserve">
+    <value>Autres infos </value>
+  </data>
+  <data name="message_type_label" xml:space="preserve">
+    <value>Type de message</value>
+  </data>
+  <data name="mobile_phone_label" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="motivationfile_label" xml:space="preserve">
+    <value>Lettre motiv en PJ</value>
+  </data>
+  <data name="motivation_error_message" xml:space="preserve">
+    <value>Motivation Obligatoire !</value>
+  </data>
+  <data name="motivation_label" xml:space="preserve">
+    <value>Motivation</value>
+  </data>
+  <data name="nationality_label" xml:space="preserve">
+    <value>Nationalité</value>
+  </data>
+  <data name="note_label" xml:space="preserve">
+    <value> Projet pro</value>
+  </data>
+  <data name="noticePeriode_error_message" xml:space="preserve">
+    <value>Disponibilité Obligatoire !</value>
+  </data>
+  <data name="noticePeriode_label" xml:space="preserve">
+    <value>Disponibilité</value>
+  </data>
+  <data name="objective_label" xml:space="preserve">
+    <value>Desc. poste</value>
+  </data>
+  <data name="options_label" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="otherDisponibility_label" xml:space="preserve">
+    <value>Disponibilité</value>
+  </data>
+  <data name="otherMotivation_label" xml:space="preserve">
+    <value>Motivation</value>
+  </data>
+  <data name="otherskillLevel_label" xml:space="preserve">
+    <value>Niveau exp.</value>
+  </data>
+  <data name="password_error_message" xml:space="preserve">
+    <value>Mot de passe obligatoire</value>
+  </data>
+  <data name="password_label" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="password_length_message" xml:space="preserve">
+    <value>Mot de passe doit contenir au moins  6 caract.</value>
+  </data>
+  <data name="phone_label" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="pointofSaleName_label" xml:space="preserve">
+    <value>Nom boutique</value>
+  </data>
+  <data name="posActivitydescription_label" xml:space="preserve">
+    <value>Description activité</value>
+  </data>
+  <data name="posActivity_code_label" xml:space="preserve">
+    <value>Activité</value>
+  </data>
+  <data name="positionSought_error_message" xml:space="preserve">
+    <value>Poste recherché obligatoire</value>
+  </data>
+  <data name="positionSought_label" xml:space="preserve">
+    <value>Poste rech.</value>
+  </data>
+  <data name="position_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Fonction'</value>
+  </data>
+  <data name="position_label" xml:space="preserve">
+    <value>Rôle de l'entreprise</value>
+  </data>
+  <data name="posLocation_label" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="PosLogo_label" xml:space="preserve">
+    <value>Votre logo</value>
+  </data>
+  <data name="proExperienceDes_error_message" xml:space="preserve">
+    <value>! Veuillez saisir la description de votre expérience</value>
+  </data>
+  <data name="proExperienceDes_label" xml:space="preserve">
+    <value>Description exp.</value>
+  </data>
+  <data name="proExperience_error_message" xml:space="preserve">
+    <value>! Veuillez saisir votre expérience</value>
+  </data>
+  <data name="proExperience_label" xml:space="preserve">
+    <value>Expérience</value>
+  </data>
+  <data name="ratingAuthorEmail_error_message" xml:space="preserve">
+    <value>Email obligatoire </value>
+  </data>
+  <data name="ratingAuthorEmail_label" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ratingAuthorName_error_message" xml:space="preserve">
+    <value>Nom obligatoire </value>
+  </data>
+  <data name="ratingAuthorName_label" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="ratingReviewContent" xml:space="preserve">
+    <value>Avis</value>
+  </data>
+  <data name="ratingReviewContent_error_message" xml:space="preserve">
+    <value>Avis obligatoire </value>
+  </data>
+  <data name="ratingReviewResponse" xml:space="preserve">
+    <value>Reponse</value>
+  </data>
+  <data name="ratingReviewResponse_error_message" xml:space="preserve">
+    <value>Reponse  obligatoire !</value>
+  </data>
+  <data name="rating_error_message" xml:space="preserve">
+    <value>Avis obligatoire</value>
+  </data>
+  <data name="rating_label" xml:space="preserve">
+    <value>Avis</value>
+  </data>
+  <data name="registernumer_error_message" xml:space="preserve">
+    <value>Identifiant obligatoire</value>
+  </data>
+  <data name="registernumer_label" xml:space="preserve">
+    <value>Identifiant (Entreprise)</value>
+  </data>
+  <data name="salaryDescription_label" xml:space="preserve">
+    <value>Compl. rénumération</value>
+  </data>
+  <data name="salary_label" xml:space="preserve">
+    <value>Rémunération</value>
+  </data>
+  <data name="sector_code_error_message" xml:space="preserve">
+    <value>Secteur obligatoire</value>
+  </data>
+  <data name="sector_code_label" xml:space="preserve">
+    <value>Secteur</value>
+  </data>
+  <data name="select_country_msg" xml:space="preserve">
+    <value>Sélectionner pays</value>
+  </data>
+  <data name="skillDescription_error_message" xml:space="preserve">
+    <value>! Veuillez saisir le domaine d'expérience</value>
+  </data>
+  <data name="skillDescription_label" xml:space="preserve">
+    <value>Domaine exp. </value>
+  </data>
+  <data name="skillLastUsed_error_message" xml:space="preserve">
+    <value>Dernière utilisation diplôme obligatoire.</value>
+  </data>
+  <data name="skillLastUsed_label" xml:space="preserve">
+    <value>Dernière utilisation.</value>
+  </data>
+  <data name="skillLevelCandAlert_label" xml:space="preserve">
+    <value>Niveau exp.</value>
+  </data>
+  <data name="skillLevel_error_message" xml:space="preserve">
+    <value>Niveau expérience obligatoire</value>
+  </data>
+  <data name="skillLevel_label" xml:space="preserve">
+    <value>Niveau exp.</value>
+  </data>
+  <data name="skillYearOfExp_error_message" xml:space="preserve">
+    <value>! Veuillez saisir le nombre d'années d'expériences</value>
+  </data>
+  <data name="skillYearOfExp_label" xml:space="preserve">
+    <value>Années expériences</value>
+  </data>
+  <data name="skill_error_message" xml:space="preserve">
+    <value>! Veuillez saisir 'Profil souhaité'</value>
+  </data>
+  <data name="skill_label" xml:space="preserve">
+    <value>Profil souhaité</value>
+  </data>
+  <data name="startDateExp_error_message" xml:space="preserve">
+    <value>Date de début obligatoire</value>
+  </data>
+  <data name="startDateExp_label" xml:space="preserve">
+    <value>Date début</value>
+  </data>
+  <data name="Status_label" xml:space="preserve">
+    <value>Activé</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SubCatalogName_error_message" xml:space="preserve">
+    <value>Sous Catégorie Obligatoire !</value>
+  </data>
+  <data name="SubCatalogName_label" xml:space="preserve">
+    <value>Sous Catégorie</value>
+  </data>
+  <data name="Telphone_label" xml:space="preserve">
+    <value>Tél mobile</value>
+  </data>
+  <data name="title_error_message" xml:space="preserve">
+    <value>Civilité obligatoire</value>
+  </data>
+  <data name="title_label" xml:space="preserve">
+    <value>Civilité</value>
+  </data>
+  <data name="TownLocation_error_message" xml:space="preserve">
+    <value>Rég.,Départ.,Cp obligatoire.</value>
+  </data>
+  <data name="TownLocation_label" xml:space="preserve">
+    <value>Rég.,Départ.,Cp.</value>
+  </data>
+  <data name="town_error_message" xml:space="preserve">
+    <value>! Veuillez choisir 'Ville'</value>
+  </data>
+  <data name="town_label" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="uploadfile_error_message" xml:space="preserve">
+    <value>! Veuillez attacher votre 'CV'</value>
+  </data>
+  <data name="user_activation_error_message" xml:space="preserve">
+    <value>Une erreur s'est produite au cours de l'activation de votre compte.&lt;br&gt;&lt;br&gt;Veuillez contacter TAMZAG pour plus d'information.</value>
+  </data>
+  <data name="website_format_error_message" xml:space="preserve">
+    <value>Format site web incorrect</value>
+  </data>
+  <data name="web_contact_filter_label" xml:space="preserve">
+    <value>Filtre destinataire</value>
+  </data>
+  <data name="web_site_error_message" xml:space="preserve">
+    <value>Site web  obligatoire</value>
+  </data>
+  <data name="web_site_label" xml:space="preserve">
+    <value>Site web</value>
+  </data>
+  <data name="yearOfExperience_label" xml:space="preserve">
+    <value>Année expériences</value>
+  </data>
+  <data name="YoutubeUrlValidate" xml:space="preserve">
+    <value>Le lien Youtube est incorrect</value>
+  </data>
+  <data name="zone_geo_label" xml:space="preserve">
+    <value>Zone géographique</value>
+  </data>
+</root>

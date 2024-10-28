@@ -1,0 +1,966 @@
+/*-----Badges-----*/
+
+.badge-secondary {
+	color: $white;
+	background-color: #f92884;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: $white;
+			text-decoration: none;
+			background-color: #f92884;
+		}
+	}
+}
+
+.badge-primary {
+	color: $white !important;
+	background-color: $primary;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: $white;
+			text-decoration: none;
+			background-color: $primary;
+		}
+	}
+}
+
+
+.badge-success {
+	color: $white !important;
+	background-color: $success;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: $white !important;
+			text-decoration: none;
+			background-color: #3adfab;
+		}
+	}
+}
+
+.badge-info {
+	color: $white !important;
+	background-color: $info;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: $white !important;
+			text-decoration: none;
+			background-color: #1594ef;
+		}
+	}
+}
+
+.badge-warning {
+	color: $white !important;
+	background-color: $yellow;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: $white !important;
+			text-decoration: none;
+			background-color: #ffaa33;
+		}
+	}
+}
+
+.badge-danger {
+	color: $white !important;
+	background-color: $danger;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: $white !important;
+			text-decoration: none;
+			background-color: #fb5b50;
+		}
+	}
+}
+
+.badge-light {
+	color: #3d4e67;
+	background-color: #f8f9fa;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: #3d4e67 !important;
+			text-decoration: none;
+			background-color: #dae0e5;
+		}
+	}
+}
+
+.badge-dark {
+	color: $white !important;
+	background-color: $dark;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: $white !important;
+			text-decoration: none;
+			background-color: #1d2124;
+		}
+	}
+}
+
+.badge-pink {
+	color: $white !important																																																		;
+	background-color: #f92884;
+	&[href] {
+		&:hover,
+		&:focus {
+			color: $white !important;
+			text-decoration: none;
+			background-color: #f92884;
+		}
+	}
+}
+
+.badge {
+	display: inline-block;
+	padding: 0.25em 0.4em;
+	font-size: 100%;
+	font-weight: 300;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 3px;
+}
+
+.badgetext {
+	float: right;
+}
+
+.badge-default {
+	background: rgba(5, 117, 230, 0.1);
+	color: #a7b4c9;
+}
+
+
+/*-----Badges-----*/
+
+.badge-offer {
+	position: absolute;
+	top: 0px;
+	left: 15px;
+	z-index: 2;
+	padding: 5px;
+	font-weight: normal;
+	text-align: center;
+	color: $white;
+	font-size: 16px;
+	height: 33px;
+	width: 50px;
+	margin-bottom: 0;
+	&.bg-danger:after {
+		border-top: 12px solid $danger;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-primary:after {
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-secondary:after {
+		border-top: 12px solid $secondary;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-success:after {
+		border-top: 12px solid $success;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-info:after {
+		border-top: 12px solid $info;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-warning:after {
+		border-top: 12px solid $yellow;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-purple:after {
+		border-top: 12px solid $purple;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-pink:after {
+		border-top: 12px solid $secondary;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+}
+
+.badge-offer1 {
+	position: absolute;
+	top: 0px;
+	right: 15px;
+	z-index: 2;
+	padding: 5px;
+	font-weight: normal;
+	text-align: center;
+	color: $white;
+	font-size: 16px;
+	height: 33px;
+	width: 50px;
+	margin-bottom: 0;
+	&.bg-danger:after {
+		border-top: 12px solid $danger;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-primary:after {
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-secondary:after {
+		border-top: 12px solid$background;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-success:after {
+		border-top: 12px solid $success;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-info:after {
+		border-top: 12px solid $info;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-warning:after {
+		border-top: 12px solid $yellow;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-purple:after {
+		border-top: 12px solid $purple;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	&.bg-pink:after {
+		border-top: 12px solid $secondary;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+}
+
+
+/*----Ribbon---*/
+
+.badge-offer {
+	position: absolute;
+	top: 0;
+	left: 15px;
+	z-index: 2;
+	padding: 5px;
+	font-weight: 400;
+	text-align: center;
+	color: $white;
+	.badge-offer {
+		position: absolute;
+		top: 0;
+		left: 15px;
+		z-index: 2;
+		padding: 5px;
+		font-weight: 400;
+		text-align: center;
+		color: $white;
+		font-size: 16px;
+		height: 33px;
+		width: 50px;
+		margin-bottom: 0;
+	}
+
+	.badge-offer.bg-danger:after {
+		border-top: 12px solid  $danger;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+  
+	.badge-offer.bg-primary:after {
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+  
+	.badge-offer.bg-secondary:after {
+		border-top: 12px solid  $secondary;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+  
+	.badge-offer.bg-success:after {
+		border-top: 12px solid  $success;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+  
+	.badge-offer.bg-info:after {
+		border-top: 12px solid  $info;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+  
+	.badge-offer.bg-warning:after {
+		border-top: 12px solid  $warning;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+  
+	.badge-offer.bg-purple:after {
+		border-top: 12px solid #6d33ff;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+  
+	.badge-offer.bg-pink:after {
+		border-top: 12px solid #f5127b;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	
+	.badge-offer1 {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		z-index: 2;
+		padding: 5px;
+		font-weight: 400;
+		text-align: center;
+		color: $white;
+		font-size: 16px;
+		height: 33px;
+		width: 50px;
+		margin-bottom: 0;
+	}
+	
+	.badge-offer1.bg-danger:after {
+		border-top: 12px solid  $danger;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	
+	.badge-offer1.bg-primary:after {
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	
+	.badge-offer1.bg-secondary:after {
+		border-top: 12px solid  $secondary;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	
+	.badge-offer1.bg-success:after {
+		border-top: 12px solid  $success;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	
+	.badge-offer1.bg-info:after {
+		border-top: 12px solid  $info;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	
+	.badge-offer1.bg-warning:after {
+		border-top: 12px solid  $warning;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	
+	.badge-offer1.bg-purple:after {
+		border-top: 12px solid #6d33ff;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+	
+	.badge-offer1.bg-pink:after {
+		border-top: 12px solid #f5127b;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+		
+	.offer {
+		background: $white;
+		border: 1px solid #ededf5;
+		margin: 15px 0;
+		overflow: hidden;
+		border-radius: 7px;
+	}
+	
+	.offer .shape {
+		border-style: solid;
+		border-width: 0 70px 40px 0;
+		float: right;
+		bottom: auto;
+		position: relative;
+		pointer-events: none;
+		right: 0;
+		left: auto;
+		height: 0px;
+		width: 0px;
+		transform: rotate(360deg);
+		border-color: rgba(255, 255, 255, 0) #ef5050 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+	}
+	
+	.offer-danger {
+		border-color:  $danger;
+	}
+		
+	.offer-danger .shape {
+		border-color: transparent  $danger transparent transparent;
+	}
+	
+	.offer-success {
+		border-color:  $success  !important;
+	}
+  
+	.offer-success .shape {
+		border-color: transparent  $success transparent transparent;
+	}
+	
+	.offer-default {
+		border-color: #18113c  !important;
+	}
+	
+	.offer-default .shape {
+		border-color: transparent #18113c transparent transparent;
+	}
+	
+	.offer-info {
+		border-color:  $info  !important;
+	}
+	
+	.offer-info .shape {
+		border-color: transparent  $info transparent transparent;
+	}
+	
+	.offer-warning {
+		border-color: #fb9505 !important;
+	}
+	
+	.offer-warning .shape {
+		border-color: transparent #fb9505 transparent transparent;
+	}
+	
+	.offer-primary {
+		border-color: $primary  !important;
+	}
+	
+	.offer-primary .shape {
+		border-color: transparent $primary transparent transparent;
+	}
+	
+	.shape-text {
+		color: $white;
+		font-size: 12px;
+		font-weight: bold;
+		position: relative;
+		right: -47px;
+		top: 0px;
+		white-space: nowrap;
+		transform: rotate(30deg);
+	}
+	
+	.offer-content {
+		padding: 20px;
+	}
+	
+	font-size: 16px;
+	height: 33px;
+	width: 50px;
+	margin-bottom: 0;
+  
+	&.bg-danger:after {
+	  border-top: 12px solid  $danger;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-primary:after {
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-secondary:after {
+	  border-top: 12px solid  $secondary;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-success:after {
+	  border-top: 12px solid  $success;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-info:after {
+	  border-top: 12px solid  $info;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-warning:after {
+	  border-top: 12px solid  $warning;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-purple:after {
+	  border-top: 12px solid #6d33ff;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-pink:after {
+	  border-top: 12px solid #f5127b;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+}
+  
+.badge-offer1 {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	z-index: 2;
+	padding: 5px;
+	font-weight: 400;
+	text-align: center;
+	color: $white;
+	font-size: 16px;
+	height: 33px;
+	width: 50px;
+	margin-bottom: 0;
+
+	&.bg-danger:after {
+		border-top: 12px solid  $danger;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		content: "";
+		height: 0;
+		left: 0;
+		position: absolute;
+		top: 33px;
+		width: 0;
+	}
+  
+	&.bg-primary:after {
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-secondary:after {
+	  border-top: 12px solid  $secondary;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-success:after {
+	  border-top: 12px solid  $success;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-info:after {
+	  border-top: 12px solid  $info;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-warning:after {
+	  border-top: 12px solid  $warning;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-purple:after {
+	  border-top: 12px solid #6d33ff;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+  
+	&.bg-pink:after {
+	  border-top: 12px solid #f5127b;
+	  border-left: 25px solid transparent;
+	  border-right: 25px solid transparent;
+	  content: "";
+	  height: 0;
+	  left: 0;
+	  position: absolute;
+	  top: 33px;
+	  width: 0;
+	}
+}
+  
+.offer {
+	background: $white;
+	border: 1px solid #ededf5;
+	margin: 15px 0;
+	overflow: hidden;
+	border-radius: 7px;
+
+	.shape {
+		border-style: solid;
+		border-width: 0 70px 40px 0;
+		float: right;
+		bottom: auto;
+		position: relative;
+		pointer-events: none;
+		right: 0;
+		left: auto;
+		height: 0px;
+		width: 0px;
+		transform: rotate(360deg);
+		border-color: rgba(255, 255, 255, 0) #ef5050 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+	}
+}
+  
+.offer-danger {
+	border-color:  $danger !important;
+
+	.shape {
+		border-color: transparent  $danger transparent transparent;
+	}
+}
+
+.offer-success {
+	border-color:  $success !important;
+
+	.shape {
+		border-color: transparent  $success transparent transparent;
+	}
+}
+  
+.offer-default {
+	border-color: #18113c !important;
+
+	.shape {
+		border-color: transparent #18113c transparent transparent;
+	}
+}
+
+.offer-info {
+	border-color:  $info !important;
+
+	.shape {
+		border-color: transparent  $info transparent transparent;
+	}
+}
+  
+.offer-warning {
+	border-color: #fb9505 !important;
+
+	.shape {
+		border-color: transparent #fb9505 transparent transparent;
+	}
+}
+  
+.offer-primary {
+	border-color: $primary !important;
+
+	.shape {
+		border-color: transparent $primary transparent transparent;
+	}
+}
+  
+.shape-text {
+	color: $white;
+	font-size: 12px;
+	font-weight: bold;
+	position: relative;
+	right: -47px;
+	top: 0px;
+	white-space: nowrap;
+	transform: rotate(30deg);
+	}
+  
+.offer-content {
+	padding: 20px;
+}
+.example-1 .btn:hover .badge {
+    background-color: $white !important;
+    color: #18113c;
+}

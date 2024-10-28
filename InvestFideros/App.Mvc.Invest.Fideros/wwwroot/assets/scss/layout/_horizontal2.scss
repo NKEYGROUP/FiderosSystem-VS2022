@@ -1,0 +1,192 @@
+.horizontalMenu > .horizontalMenu-list > li {
+	> ul.sub-menu {
+	  opacity: 0;
+	  visibility: hidden;
+	  -o-transform-origin: 0% 0%;
+	  transform-origin: 0% 0%;
+	  -ms-transform-origin: 0% 0%;
+	  -moz-transform-origin: 0% 0%;
+	  -webkit-transform-origin: 0% 0%;
+	  -o-transition: -o-transform 0.3s, opacity 0.3s;
+	  transition: -o-transform 0.3s, opacity 0.3s;
+	  -ms-transition: -ms-transform 0.3s, opacity 0.3s;
+	  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	  transform-style: preserve-3d;
+	  -o-transform-style: preserve-3d;
+	  -moz-transform-style: preserve-3d;
+	  -webkit-transform-style: preserve-3d;
+	  transform: rotateX(-75deg);
+	  -o-transform: rotateX(-75deg);
+	  -moz-transform: rotateX(-75deg);
+	  -webkit-transform: rotateX(-75deg);
+	}
+  
+	&:hover {
+	  > ul.sub-menu, > .horizontal-megamenu {
+		opacity: 1;
+		visibility: visible;
+		transform: rotateX(0deg);
+		-o-transform: rotateX(0deg);
+		-moz-transform: rotateX(0deg);
+		-webkit-transform: rotateX(0deg);
+	  }
+	}
+  
+	> {
+	  ul.sub-menu > li {
+		> ul.sub-menu {
+		  opacity: 0;
+		  visibility: hidden;
+		  transform-style: preserve-3d;
+		  -o-transform-style: preserve-3d;
+		  -moz-transform-style: preserve-3d;
+		  -webkit-transform-style: preserve-3d;
+		  transform: rotateX(-75deg);
+		  -o-transform: rotateX(-75deg);
+		  -moz-transform: rotateX(-75deg);
+		  -webkit-transform: rotateX(-75deg);
+		}
+  
+		&:hover > ul.sub-menu {
+		  opacity: 1;
+		  visibility: visible;
+		  transform-origin: 0% 0%;
+		 transition: -o-transform 0.4s, opacity 0.4s;
+		  -o-transform-origin: 0% 0%;
+		  -ms-transform-origin: 0% 0%;
+		  -moz-transform-origin: 0% 0%;
+		  -webkit-transform-origin: 0% 0%;
+		  -o-transition: -o-transform 0.4s, opacity 0.4s;
+		  -ms-transition: -ms-transform 0.4s, opacity 0.4s;
+		  -moz-transition: -moz-transform 0.4s, opacity 0.4s;
+		  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+		  transform: rotateX(0deg);
+		  -o-transform: rotateX(0deg);
+		  -moz-transform: rotateX(0deg);
+		  -webkit-transform: rotateX(0deg);
+		}
+  
+		> ul.sub-menu > li {
+		  > ul.sub-menu {
+			opacity: 0;
+			visibility: hidden;
+			transform-origin: 0% 0%;
+			transition: -o-transform 0.4s, opacity 0.4s;
+			-o-transform-origin: 0% 0%;
+			-ms-transform-origin: 0% 0%;
+			-moz-transform-origin: 0% 0%;
+			-webkit-transform-origin: 0% 0%;
+			-o-transition: -o-transform 0.4s, opacity 0.4s;
+			-ms-transition: -ms-transform 0.4s, opacity 0.4s;
+			-moz-transition: -moz-transform 0.4s, opacity 0.4s;
+			-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+			transform-style: preserve-3d;
+			-o-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			-webkit-transform-style: preserve-3d;
+			transform: rotateX(-75deg);
+			-o-transform: rotateX(-75deg);
+			-moz-transform: rotateX(-75deg);
+			-webkit-transform: rotateX(-75deg);
+		  }
+  
+		  &:hover > ul.sub-menu {
+			opacity: 1;
+			visibility: visible;
+			transform: rotateX(0deg);
+			-o-transform: rotateX(0deg);
+			-moz-transform: rotateX(0deg);
+			-webkit-transform: rotateX(0deg);
+		  }
+		}
+	  }
+  
+	  .horizontal-megamenu {
+		opacity: 0;
+		visibility: hidden;
+		transform-origin: 0% 0%;
+		transition: -o-transform 0.3s, opacity 0.3s;
+		-o-transform-origin: 0% 0%;
+		-ms-transform-origin: 0% 0%;
+		-moz-transform-origin: 0% 0%;
+		-webkit-transform-origin: 0% 0%;
+		-o-transition: -o-transform 0.3s, opacity 0.3s;
+		-ms-transition: -ms-transform 0.3s, opacity 0.3s;
+		-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+		-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+		transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		transform: rotateX(-75deg);
+		-o-transform: rotateX(-75deg);
+		-moz-transform: rotateX(-75deg);
+		-webkit-transform: rotateX(-75deg);
+	  }
+	}
+  }
+
+
+
+.horizontal-main,
+.horizontalMenu>.horizontalMenu-list,
+.horizontal-header {
+	background-color: $white;
+}
+
+.horizontalMenu>.horizontalMenu-list>li {
+	>a {
+		color: #504e70;
+		&.btn {
+			color: $white;
+			font-size: 0.85rem;
+		}
+		>.fa {
+			color: #55606c;
+		}
+		&.active .fa {
+			color: $white !important;
+		}
+	}
+	&:hover>a>.fa {
+		color: $white !important;
+	}
+	> {
+		a:hover .fa {
+			color: $white !important;
+		}
+		ul.sub-menu>li {
+			a i {
+				color: #333;
+			}
+			&:hover>a i {
+				color: $white;
+			}
+		}
+		a.btn:hover {
+			background: #fb9512;
+		}
+	}
+}
+.horizontalMenu > .horizontalMenu-list > li > ul.sub-menu > li> ul.sub-menu > li:hover > a i {
+    color: $white;
+}
+
+@media only screen and (max-width: 991px) {
+	.horizontalMenu > .horizontalMenu-list > li > ul.sub-menu > li > ul.sub-menu > li:hover > a, 
+	.horizontalMenu > .horizontalMenu-list > li > ul.sub-menu > li > ul.sub-menu > li > ul.sub-menu > li:hover a,
+	.horizontalMenu > .horizontalMenu-list > li > ul.sub-menu > li > ul.sub-menu > li > a:hover {
+		background-color: #f6f7fb;
+		color: #6c6a8d;
+		text-decoration: none;
+	}
+}
+
+/*--Horizontal Css--*/
+
+@media (max-width: 991px) {
+	.horizontal-header .container {
+		position: relative;
+	}
+}

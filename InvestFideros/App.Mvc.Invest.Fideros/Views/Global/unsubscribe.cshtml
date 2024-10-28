@@ -1,0 +1,109 @@
+﻿@model App.Mvc.Invest.Fideros.Models.UnsubscribeModel
+@{
+    ViewBag.Title = "Newsletter : Désabonnez-vous";
+    ViewBag.MetaDescription = "Se désabonner de la newsletter";
+}
+
+<div id="page-content">
+
+    <!-- Page Banner + Breadcrumb -->
+    <div>
+        <div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner2.jpg">
+            <div class="header-text mb-0">
+                <div class="container">
+                    <div class="text-center text-white ">
+                        <h1 class="mb-1" style="font-size: 3rem; font-weight:800; font-family:'Maven Pro';">DÉSABONNEZ-VOUS DE LA NEWSLETTER</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Banner + Breadcrumb -->
+    <!--Contact-->
+    <div class="sptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6  col-md-12 mx-auto d-block">
+                    <div class="card mb-0">
+                        <div class="container">
+                            <div class="text-black-50 ">
+                                <br />
+                                <h1 class="mb-1 text-center" style="font-size: 1.8rem; font-weight:800; font-family:'Maven Pro';">Se désabonner de la newsletter</h1>
+                                @if ((string)ViewBag.PageControle != "Success")
+                                {
+                                    <br />
+                                    <br />
+                                    <p style="font-family:'Maven Pro';font-size: 18px;">
+                                        Si vous ne souhaitez plus recevoir des messages d'informations, veuillez vous désabonner de notre base de données en saisissant votre adresse email, puis valider.
+                                    </p>
+                                }
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @if ((string)ViewBag.PageControle == "Success")
+                            {
+                                <p style="font-family:'Maven Pro';font-size: 18px;">
+                                    Vous êtes à présent désabonné de notre newsletter.<br />
+                                        Nous vous remercions pour votre collaboration.
+                                        <br />A très bientôt !
+                                        <br /><br />
+                                        L'équipe Fideros                                    
+                                </p>
+                            }
+                            else
+                            {
+                                using (Html.BeginForm((string)ViewBag.FormAction, "Global", new { id = (string)ViewBag.FormID }, FormMethod.Post, true, new { @id = "formsubs", @name = "formsubs" }))
+                                {
+                                    <p>* Informations obligatoires</p>
+                                    @Html.AntiForgeryToken()
+                                    <p>
+                                        @ViewBag.Message
+                                    </p>
+                                    <p style="font-weight:700;color:red">
+                                        @Html.ValidationSummary(true, "Veuillez saisir les informations obligatoires.")
+                                    </p>
+                                    {
+                                        string errorMessage = "";
+                                        foreach (var modelStateValue in ViewData.ModelState.Values)
+                                        {
+                                            foreach (var error in modelStateValue.Errors)
+                                            {
+                                                // Do something useful with these properties
+                                                if (string.IsNullOrEmpty(errorMessage))
+                                                {
+                                                    errorMessage = error.ErrorMessage;
+                                                }
+                                                else
+                                                {
+                                                    errorMessage = errorMessage + ", " + error.ErrorMessage;
+                                                }
+                                            }
+                                        }
+
+                                        <p style="font-weight:lighter;color:red">
+                                            @errorMessage
+                                        </p>
+
+                                    }
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.EmailAddress, new { @class = "form-label text-dark" })
+                                        @Html.ValidationMessageFor(m => m.EmailAddress, null, new { @class = "form-label text-danger", @style = "font-weight:lighter;color:#ff2b88" })
+                                        @Html.TextBoxFor(m => m.EmailAddress, new { @type = "text", @class = "form-control", @placeholder = "*Adresse email", @maxLength = "255" })
+                                    </div>
+                                    <div class="form-footer mt-2">
+                                        <br />
+                                        <input type="submit" value="Envoyer" class="btn btn-primary btn-block">
+                                    </div>
+                                    <br />
+                                    <br />
+
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Contact-->
+</div>

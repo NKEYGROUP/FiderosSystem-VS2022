@@ -1,0 +1,39 @@
+﻿<div id="gdpr-cookie-message">
+    <h4>Cookies & Confidentialit&eacute;</h4>
+    <p>
+        Nous utilisons des cookies pour fournir et am&eacute;liorer nos services ainsi que pour enrichir votre exp&eacute;rience de navigation. <br /><br />
+        En continuant &agrave; utiliser notre site, vous acceptez l&rsquo;<a href="@Url.Action("Cookies-notice", "Global")">utilisation de cookies.</a>
+    </p>
+    <div id="gdpr-cookie-types" style="display:none;">
+        <h5>Type de cookies</h5>
+        <ul>Marketing</ul>
+        <ul>Pr&eacute;frence</ul>
+    </div>
+    <p>
+        <a href="@Url.Action("Privacy-notice", "Global")">Notre politique de confidentialité</a>
+    </p>
+    <p>
+        <button id="gdpr-cookie-accept" type="button">Accepter les cookies.</button>
+        @*<button id="gdpr-cookie-advanced" type="button">Options avancées</button>*@
+    </p>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#gdpr-cookie-message').remove();
+        $("#gdpr-cookie-accept").click(function () {
+            var link = '/Global/CookiesConsent'
+            $.ajax({
+                type: 'GET',
+                url: link,
+                dataType: 'json',
+                data: {},
+                success: function (response) {
+                    $('#gdpr-cookie-message').hide();
+                },
+                error: function (response) {
+                }
+            });
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,171 @@
+﻿@model App.Mvc.Invest.Fideros.Models.LoginModel
+@{
+    ViewBag.Title = "Connexion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Dashboard Css -->
+<link href="../assets/css/dashboard.css" rel="stylesheet" />
+<!--Sliders Section-->
+<section>
+    <div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner2.jpg">
+        <div class="header-text mb-0">
+            <div class="container">
+                <div class="text-center text-white ">
+                    <h1 class="mb-1" style="font-size: 3rem; font-weight:800; font-family:'Maven Pro';">Connexion</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/Sliders Section-->
+<!--Login-Section-->
+<section class="sptb">
+    <div class="container customerpage">
+        <div class="row">
+            <div class="col-lg-4 d-block mx-auto">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 col-md-12">
+                        <div class="card mb-0">
+                            <div class="card-header">
+                                <h3 class="card-title">Accédez à votre espace privé</h3>
+                            </div>
+                            <div class="card-body">
+
+                                @using (Html.BeginForm((string)ViewBag.FormAction, "Account", new { id = (string)ViewBag.FormID, returnUrl = (string)ViewBag.ReturnUrl }, FormMethod.Post, true, new { @id = "formsubs", @name = "formsubs", @onSubmit = "return FormSubsOnSubmit(this);" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <p>* Informations obligatoires</p>
+                                    <p>
+                                        @ViewBag.Message
+                                    </p>
+                                    <p style="font-weight:700;color:red">
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    </p>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Identifier, new { @class = "form-label text-dark" })
+                                        @Html.ValidationMessageFor(m => m.Identifier, null, new { @class = "form-label text-danger" })
+                                        @Html.TextBoxFor(m => m.Identifier, new { @type = "email", @class = "form-control", @placeholder = "Adresse email*", @id = "emailField" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.Password, new { @class = "form-label text-dark" })
+                                        @Html.ValidationMessageFor(m => m.Password, null, new { @class = "form-label text-danger" })
+                                        @Html.TextBoxFor(m => m.Password, new { @type = "password", @class = "form-control", @placeholder = "Mot de passe*", @id = "nameField" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            @Html.CheckBoxFor(m => m.RememberMe, new { @type = "checkbox", @class = "custom-control-input" })
+                                            @Html.LabelFor(m => m.RememberMe, new { @class = "custom-control-label text-dark" })<br />
+                                            <a href="@Url.Action("ForgotPassword", "Account")" class="float-right small text-dark mt-1">J'ai oublié mon mot de passe</a>
+                                            <br />
+
+                                        </label>
+                                    </div>
+                                    <div class="form-footer mt-2">
+                                        <input type="submit" value="Se connecter" name="SigBtn" class="btn btn-primary btn-block">
+                                    </div>
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/Login-Section-->
+
+<script>
+    function SignIn() {
+        gapi.auth2.getAuthInstance().signIn().then(
+            function (success) {
+                //debugger;
+                $('#divSecurityProviderMsg').html();
+                var link = '@Url.Action("action", "controller")'
+                link = link.replace("action", "GoogleAuthent");
+                link = link.replace("controller", "Account");
+                $.ajax({
+                    type: 'POST',
+                    url: link,
+                    dataType: 'json',
+                    data: { token: success.getAuthResponse().id_token },
+                    success: function (response) {
+                        if (response.Success)
+                            window.location.pathname = response.Msg
+                        else
+                            $('#divSecurityProviderMsg').html(response.Msg);
+                    },
+                    error: function (response) {
+                        $('#divSecurityProviderMsg').html(response.Msg);
+                    }
+                });
+                return false;
+            },
+            function (error) {
+                console.log("THIS IS A BADNESS", error)
+            }
+        );
+    }
+
+    function checkFacebookLogin() {
+        FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+                //FB.api('/me',{fields: 'name, email'}, function(response) {
+                //	console.log("FACEBOOK JSON", response);
+                //	document.getElementById('divSecurityProviderMsg').innerHTML = 'Thanks for logging in, ' + response.email + '!';
+                //});
+                signInFacebook(response.authResponse.accessToken)
+                return false;
+            }
+            else {
+                initiateFBLogin();
+            }
+        });
+    }
+
+    function initiateFBLogin() {
+        FB.login(function (response) {
+            if (response.authResponse) {
+                signInFacebook(response.authResponse.accessToken)
+            } else {
+                document.getElementById('divSecurityProviderMsg').innerHTML = 'Authentication via facebook impossible ! Veuillez utiliser un autre mode pour vous authentifier.';
+            }
+        });
+    }
+
+    function signInFacebook(accessToken) {
+        var link = '@Url.Action("action", "controller")'
+        link = link.replace("action", "FacebookAuthent");
+        link = link.replace("controller", "Account");
+        $.ajax({
+            type: 'POST',
+            url: link,
+            dataType: 'json',
+            data: { token: accessToken },
+            success: function (response) {
+                if (response.Success)
+                    window.location.pathname = response.Msg
+                else
+                    $('#divSecurityProviderMsg').html(response.Msg);
+            },
+            error: function (response) {
+                $('#divSecurityProviderMsg').html(response.Msg);
+            }
+        });
+    }
+
+    function FormSubsOnSubmit(form) {
+        var isValid = $("#formsubs").validate().checkForm();
+        if (isValid) {
+            form.SigBtn.disabled = true;
+            form.SigBtn.value = "Connexion....";
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+</script>

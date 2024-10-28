@@ -1,0 +1,1242 @@
+.btn-primary {
+	color: $white  !important;
+	background-color: $primary;
+	border-color: $primary;
+
+	&:hover {
+		color: $white  !important;
+		background-color: $primary-hover;
+		border-color: $primary-hover;
+	}
+
+	&:focus,
+	&.focus {
+		box-shadow: 0 0 0 2px $primary-shadow;
+	}
+
+	&.disabled,
+	&:disabled {
+		color: $white;
+		background-color: $primary-hover;
+		border-color: $primary-hover;
+	}
+
+	&:not(:disabled):not(.disabled) {
+
+		&:active,
+		&.active {
+			color: $white;
+			background-color: $primary-hover;
+			border-color: $primary-hover;
+		}
+	}
+}
+
+.show>.btn-primary.dropdown-toggle {
+	color: $white;
+	background-color: $primary-hover;
+	border-color: $primary-hover;
+}
+
+.btn-primary:not(:disabled):not(.disabled) {
+
+	&:active:focus,
+	&.active:focus {
+		box-shadow: 0 0 0 2px $primary-shadow;
+	}
+}
+
+.show>.btn-primary.dropdown-toggle:focus {
+	box-shadow: 0 0 0 2px $primary-shadow;
+}
+
+.btn-outline-primary {
+	color: $primary;
+	background-color: transparent;
+	background-image: none;
+	border-color: $primary  !important;
+
+	&:hover {
+		color: $white  !important;
+		background-color: $primary;
+		border-color: $primary;
+	}
+
+	&:focus,
+	&.focus {
+		box-shadow: 0 0 0 2px $primary-shadow;
+	}
+
+	&.disabled,
+	&:disabled {
+		color: $primary;
+		background-color: transparent;
+	}
+
+	&:not(:disabled):not(.disabled) {
+
+		&:active,
+		&.active {
+			color: $white;
+			background-color: $primary;
+			border-color: $primary;
+		}
+	}
+}
+
+.show>.btn-outline-primary.dropdown-toggle {
+	color: $white;
+	background-color: $primary;
+	border-color: $primary;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled) {
+
+	&:active:focus,
+	&.active:focus {
+		box-shadow: 0 0 0 2px $primary-shadow;
+	}
+}
+
+.show>.btn-outline-primary.dropdown-toggle:focus {
+	box-shadow: 0 0 0 2px $primary-shadow;
+}
+
+.btn-link {
+	color: $primary;
+}
+
+.alert-primary {
+	color: $white;
+	background-color: $primary;
+	border-color: $primary;
+
+	hr {
+		border-top-color: #b7cded;
+	}
+
+	.alert-link {
+		color: #172b46;
+	}
+}
+
+.label-primary {
+	background-color: $primary;
+}
+
+.bg-primary {
+	color: $white;
+	background-color: $primary;
+
+	&[href] {
+
+		&:hover,
+		&:focus {
+			color: $white  !important;
+			text-decoration: none;
+			background-color: $primary-hover;
+		}
+	}
+}
+
+.bg-gradient-primary {
+	background: $primary-gradient;
+}
+
+.bg-primary {
+	background-color: $primary  !important;
+}
+
+a.bg-primary {
+
+	&:hover,
+	&:focus {
+		background-color: $primary-hover  !important;
+	}
+}
+
+button.bg-primary {
+
+	&:hover,
+	&:focus {
+		background-color: $primary-hover  !important;
+	}
+}
+
+.border-primary {
+	border-color: $primary  !important;
+}
+
+.text-primary {
+	color: $primary  !important;
+}
+
+a {
+	&.text-primary {
+
+		&:hover,
+		&:focus {
+			color: $primary-hover  !important;
+		}
+	}
+
+	&.text-dark {
+
+		&:hover,
+		&:focus {
+			color: $primary  !important;
+		}
+	}
+}
+
+.social-box.linkedin i {
+	background: $primary;
+}
+
+.checkbox span:after,
+.user-card .card-block .activity-leval li.active {
+	background-color: $primary;
+}
+
+#count-down .clock-presenter .digit {
+	background: $primary;
+}
+
+.masthead .masthead-bg {
+	background: $primary-gradient;
+}
+
+.notifyimg {
+	background: $primary;
+}
+
+.drop-icon-wrap .drop-icon-item:hover {
+	color: $primary;
+}
+
+.dropdown-item {
+
+	&:hover,
+	&:focus,
+	&.active,
+	&:active {
+		color: $primary;
+	}
+}
+
+.timeline__item:after {
+	border-color: $primary;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+	background-color: $primary;
+}
+
+.form-checkbox .custom-control-input {
+
+	&:checked~.custom-control-label::before,
+	&:indeterminate~.custom-control-label::before {
+		background-color: $primary;
+	}
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::before {
+	background-color: $primary;
+}
+
+.form-select:focus {
+	border-color: $primary;
+}
+
+.form-file-input:focus~.form-file-label {
+	border-color: $primary;
+
+	&::after {
+		border-color: $primary;
+	}
+}
+
+.form-file-label::after {
+	background-color: $primary;
+	border-left-color: $primary;
+}
+
+.form-range {
+
+	&::-webkit-slider-thumb,
+	&::-moz-range-thumb,
+	&::-ms-thumb {
+		background-color: $primary;
+	}
+}
+
+.nav-link.active {
+	background-color: $primary;
+}
+
+.nav-pills {
+
+	.nav-link.active,
+	.show>.nav-link {
+		background-color: $primary;
+	}
+}
+
+.page-link:hover {
+	color: $primary;
+}
+
+.page-item.active .page-link {
+	background-color: $primary;
+	border-color: $primary;
+}
+
+.range.range-primary {
+	input[type="range"] {
+
+		&::-webkit-slider-thumb,
+		&::-moz-slider-thumb {
+			background-color: $primary;
+		}
+	}
+
+	output {
+		background-color: $primary;
+	}
+
+	input[type="range"] {
+		outline-color: $primary;
+	}
+}
+
+.nav-tabs .nav-item1 .nav-link {
+
+	&:hover:not(.disabled),
+	&.active {
+		background: $primary;
+	}
+}
+
+.panel.price>.panel-heading {
+	background: $primary;
+	color: $white;
+	background: $primary;
+}
+
+.heading-primary {
+	background-color: $primary;
+}
+
+.page-header .breadcrumb-item a,
+.breadcrumb-item1 a:hover,
+.panel-title1 a {
+	color: $primary;
+}
+
+.header {
+	background: $primary-gradient;
+}
+
+.header-bg {
+	background: #eef2f9;
+	background: $primary-gradient;
+}
+
+.nav-tabs .nav-link {
+
+	&:hover:not(.disabled),
+	&.active {
+		color: $white  !important;
+		background: $primary;
+	}
+}
+
+.navtab-wizard.nav-tabs .nav-link {
+
+	&.active,
+	&:hover {
+		color: $primary;
+		background: $white;
+	}
+}
+
+.admin-navbar {
+	.nav-item.active .nav-link {
+		color: $primary;
+
+		.icon {
+			color: $primary;
+		}
+	}
+
+	.nav-link {
+
+		&:hover,
+		&:focus,
+		&.active {
+			color: $primary;
+		}
+	}
+
+	.mega-dropdown .sub-item .section-label {
+		color: $primary;
+	}
+
+	.sub-item ul a {
+		&:active {
+			background-color: $primary;
+		}
+
+		&:hover,
+		&:focus {
+			color: $primary;
+			text-decoration: none;
+			background-color: #f9faff;
+		}
+	}
+}
+
+.expanel-primary {
+	border-color: $primary  !important;
+
+	>.expanel-heading {
+		color: $white  !important;
+		background-color: $primary  !important;
+		border-color: $primary  !important;
+	}
+}
+
+.error-img .form-control:focus {
+	color: $white;
+	background-color: $white-2;
+	border-color: $primary;
+}
+
+.avatar {
+	background: $primary no-repeat center/cover;
+}
+
+.spinner {
+	background: $primary-gradient;
+}
+
+.spinner-lg {
+	background-color: $primary;
+}
+
+.double-bounce1,
+.double-bounce2,
+.cube1,
+.cube2 {
+	background: $primary-gradient;
+}
+
+.lds-heart div {
+	background: $primary;
+
+	&:after,
+	&:before {
+		background: $primary;
+	}
+}
+
+.lds-ring div {
+	border-color: $primary  !important;
+	border-color: $primary transparent transparent transparent !important;
+}
+
+.lds-hourglass:after {
+	border-color: $primary transparent !important;
+}
+
+.mediaicon {
+	border-color: $primary;
+	background: $primary;
+}
+
+a.chip:hover {
+	background-color: $primary;
+}
+
+.highlight .s {
+	color: $primary;
+}
+
+.selectgroup-input {
+	&:checked+.selectgroup-button {
+		border-color: $primary;
+		color: $primary;
+		background: $background;
+	}
+
+	&:focus+.selectgroup-button {
+		border-color: $primary;
+		color: $primary;
+		box-shadow: 0 0 0 2px rgba(105, 99, 255, 0.25);
+	}
+}
+
+.form-switch-input {
+	&:checked~.form-switch-indicator {
+		background: $primary;
+	}
+
+	&:focus~.form-switch-indicator {
+		box-shadow: 0 0 0 2px rgba(105, 99, 255, 0.25);
+		border-color: $primary;
+	}
+}
+
+.imagecheck-input:focus~.imagecheck-figure {
+	border-color: $primary;
+	box-shadow: 0 0 0 2px rgba(105, 99, 255, 0.25);
+}
+
+.imagecheck-figure:before {
+	background: $primary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center (center / 50%) 50%;
+	color: $white;
+}
+
+.colorinput-input:focus~.colorinput-color {
+	border-color: $primary;
+	box-shadow: 0 0 0 2px rgba(105, 99, 255, 0.25);
+}
+
+.ui-datepicker .ui-datepicker-title {
+	color: $primary;
+}
+
+#back-to-top {
+	background: $primary-gradient;
+
+	&:hover {
+		background: $white;
+		color: $primary  !important;
+		border-color: $primary;
+	}
+}
+
+#chat-message {
+	background: $primary-gradient;
+}
+
+.tabs-menu ul li .active {
+	background: $primary;
+}
+
+.tabs-menu1 ul li .active {
+	border-color: $primary;
+	color: $primary;
+}
+
+.wideget-user-tab .tabs-menu1 ul li .active {
+	border-bottom-color: $primary  !important;
+}
+
+.rating-stars .rating-stars-container .rating-star {
+
+	&.is--active .fa-heart,
+	&.is--hover .fa-heart {
+		color: $primary;
+	}
+}
+
+.message-feed:not(.right) .mf-content {
+	background: $primary;
+	color: $white;
+
+	&:before {
+		border-right-color: $primary;
+	}
+}
+
+.msb-reply button {
+	background: $primary;
+}
+
+.wizard-card {
+	.moving-tab {
+		background-color: $primary  !important;
+	}
+
+	.choice {
+
+		&:hover .icon,
+		&.active .icon {
+			border-color: $primary  !important;
+			color: $primary  !important;
+		}
+	}
+}
+
+.cal1 .clndr {
+	.clndr-table {
+		.header-days {
+			background: $primary;
+		}
+
+		tr .day {
+
+			&.today.event,
+			&.my-today.event {
+				background: $primary;
+			}
+
+			&.today:hover,
+			&.my-today:hover {
+				background: $primary;
+				color: $white;
+			}
+		}
+	}
+
+	.clndr-controls .clndr-control-button {
+		.clndr-previous-button {
+			color: $primary;
+			background: #e6f2fe;
+		}
+
+		.clndr-next-button {
+			color: $primary;
+			background: #e6f2fe;
+
+			&:hover {
+				background: $primary;
+			}
+		}
+
+		.clndr-previous-button:hover {
+			background: $primary;
+		}
+	}
+}
+
+.fc button {
+	background: $primary;
+}
+
+
+#sidebar {
+	.accordion-toggle i {
+		background: $primary-gradient;
+	}
+
+	ul li.active>a {
+		color: $primary;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	li a[aria-expanded="true"].active:before {
+		background: $primary-gradient;
+	}
+
+	ul li a:hover,
+	.collapse li a:hover {
+		color: $primary;
+	}
+}
+
+.sweet-alert button {
+	background-color: $primary  !important;
+}
+
+.timeline__item:after {
+	border-color: $primary;
+}
+
+.label-primary.arrowed:before {
+	border-right-color: $primary;
+}
+
+.widgetdate p,
+.widgetbox p,
+.datebox p {
+	border-bottom-color: $primary;
+}
+
+.arrow-ribbon.bg-primary:before {
+	border-left-color: $primary;
+}
+
+.arrow-ribbon2:before {
+	border-left-color: $primary;
+}
+
+.badge-offer.bg-primary:after,
+.badge-offer1.bg-primary:after {
+	border-top-color: $primary;
+}
+
+.social-icons li:hover {
+	background: $primary;
+	color: $white;
+}
+
+.social li a:hover,
+.footer-main a:hover,
+.footer-links a:hover {
+	color: $primary  !important;
+}
+
+.product-tags li a:hover {
+	background: $primary;
+	border-color: $primary;
+}
+
+.counter-icon {
+	border-color: $primary;
+
+	i {
+		color: $primary;
+	}
+}
+
+.header-main i {
+	color: $primary;
+}
+
+.header-links li a {
+
+	&.active,
+	&:hover {
+		background: $primary;
+		color: $white;
+	}
+}
+
+.card-pay .tabs-menu li a.active {
+	background: $primary  !important;
+	color: $white!important;
+}
+
+.item-all-cat .category-type .item-all-card img {
+	background: $primary-gradient;
+}
+
+.item1-tabs-menu ul li .active {
+	background: $primary;
+}
+
+.items-blog-tab-heading .items-blog-tab-menu li .active {
+	background: $primary  !important;
+	color: $white  !important;
+}
+
+.item2-gl-nav .item2-gl-menu li .active {
+	color: $primary  !important;
+}
+
+.item-all-cat .item-all-card:hover .item-all-text h5 {
+	color: $primary  !important;
+}
+
+.carousel-indicators li.active {
+	color: $white;
+	background: $primary;
+}
+
+.item-cards7-ic.realestate-list li a:hover {
+	color: $primary;
+}
+
+.item1-links a {
+	&:hover {
+		color: $primary;
+	}
+
+	&.active {
+		background: #f9faff;
+		color: $primary;
+		border-right-color: $primary;
+	}
+}
+
+.settings-tab .tabs-menu li a.active {
+	background: $primary !important;
+	color: $white !important;
+}
+
+.ads-tabs .tabs-menus ul li .active {
+	background: $primary;
+	color: $white !important;
+}
+
+.showmore-button-inner {
+	border-color: $primary;
+	color: $primary;
+}
+
+.owl-nav button,
+.owl-carousel:hover .owl-nav button {
+	color: $primary  !important;
+}
+
+.owl-nav>div i {
+	color: $primary;
+}
+
+.tabs-menu ul.eductaional-tabs li .active {
+	background: $primary;
+}
+
+.register-right .nav-tabs .nav-link:hover {
+	background: $primary;
+	color: $white;
+}
+
+.gradient-icon {
+	background: $primary-gradient;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.axgmap-img {
+	border-color: $primary;
+}
+
+.horizontalMenu>.horizontalMenu-list>li {
+	> {
+		.horizontal-megamenu .menu_form input {
+
+			&[type="submit"],
+			&[type="button"] {
+				background-color: $primary;
+				color: $white;
+			}
+		}
+
+		a.active {
+			background-color: $primary;
+			color: $white  !important;
+		}
+	}
+
+	&:hover>a {
+		background-color: $primary;
+		color: $white  !important;
+	}
+
+	>ul.sub-menu>li {
+		&:hover>a {
+			background-color: $primary  !important;
+			color: $white  !important;
+		}
+
+		>ul.sub-menu>li {
+
+			&:hover>a,
+			>ul.sub-menu>li:hover a {
+				background-color: $primary  !important;
+				color: $white  !important;
+			}
+		}
+	}
+}
+
+code {
+	color: $primary;
+}
+
+#gdpr-cookie-message {
+
+	h4,
+	h5 {
+		color: $primary;
+
+	}
+
+	a {
+		color: $primary;
+		border-bottom-color: $primary;
+
+		&:hover {
+			border-bottom-color: $primary;
+			color: $primary;
+		}
+	}
+}
+
+button#gdpr-cookie-advanced {
+	color: $white;
+	background-color: $primary  !important;
+}
+
+.ui-widget-header,
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	background: $primary;
+}
+
+.side-menu li a.active:before {
+	background: $primary-gradient;
+	box-shadow: 0px 0px 14px 0px $primary;
+}
+
+.app-sidebar {
+	.side-menu__item.active {
+		color: $primary  !important;
+
+		&:hover {
+			color: $primary  !important;
+		}
+	}
+
+	.side-menu li {
+
+		&.active>a,
+		a.active {
+			color: $primary;
+		}
+	}
+
+	.slide-menu li.active>a {
+		color: $primary;
+	}
+
+	.side-menu li {
+
+		ul li a:hover,
+		a:hover,
+		&.active>a,
+		a.active {
+			color: $primary  !important;
+		}
+	}
+
+	.slide-menu li.active>a,
+	.side-menu li a:hover {
+		color: $primary;
+	}
+}
+
+.side-menu li a.active:before {
+	background: $primary-gradient;
+	box-shadow: 0px 0px 14px 0px $primary;
+}
+
+.navtab-wizard.nav-tabs .nav-link {
+
+	&.active,
+	&:hover {
+		color: $white  !important;
+		background: $primary;
+	}
+}
+
+.form-inline .nav-search .btn {
+	border-color: $primary;
+}
+
+.wrapper>h1 span {
+	border-bottom-color: $primary;
+	color: $primary;
+}
+
+.tab_wrapper {
+	>ul li.active {
+		border-color: $primary;
+		background: $primary;
+		color: $white;
+	}
+
+	.controller span {
+		background: $primary;
+	}
+
+	.content_wrapper .accordian_header.active {
+		color: $primary;
+
+		&:after {
+			background: $primary;
+		}
+
+		.popover-arrow {
+			border-top-color: $primary;
+			border-left-color: $primary;
+		}
+	}
+
+	&.left_side>ul li.active:after,
+	&.right_side>ul li.active:after {
+		background: $primary;
+	}
+}
+
+.addui-slider .addui-slider-track {
+
+	.addui-slider-range,
+	.addui-slider-handle:after {
+		background: $primary;
+	}
+}
+
+.accordionjs .acc_section.acc_active>.acc_head {
+	background: $primary;
+}
+
+.perfect-datetimepicker tbody td.selected {
+	border-color: $primary;
+	background-color: $primary;
+}
+
+div.conv-form-wrapper div {
+	&.options div.option {
+		border-color: $primary  !important;
+		color: $primary;
+	}
+
+	&#messages div.message.from {
+		background: $primary;
+	}
+
+	&.options div.option.selected {
+		background: $primary;
+		color: $white;
+	}
+}
+
+form.convFormDynamic button.submit {
+	border-color: $primary;
+	background: $primary;
+
+	&:hover {
+		background: $primary;
+		color: $white;
+	}
+}
+
+.exzoom {
+	.exzoom_nav .exzoom_nav_inner span.current {
+		border-color: $primary;
+	}
+
+	.exzoom_btn a {
+		color: $primary;
+	}
+}
+
+.prev:hover {
+	color: $primary  !important;
+}
+
+.next:hover {
+	color: $primary  !important;
+}
+
+.g_f-s {
+	.prev:hover i {
+		color: $primary;
+	}
+
+	.next:hover i {
+		color: $primary;
+	}
+
+	.btn-close-button>*:hover {
+		color: $primary;
+	}
+}
+
+.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .link-list li a:hover {
+	color: $primary  !important;
+}
+
+.register {
+	background: $primary-gradient;
+}
+
+.btnRegister {
+	background: $primary;
+}
+
+.register .nav-tabs .nav-link.active {
+	color: $primary;
+	border-color: $primary;
+}
+
+.pretty {
+
+	input:checked~.state.p-primary label:after,
+	&.p-toggle .state.p-primary label:after {
+		background-color: $primary  !important;
+	}
+
+	input:checked~.state.p-primary-o label:before,
+	&.p-toggle .state.p-primary-o label:before {
+		border-color: $primary;
+	}
+
+	input:checked~.state.p-primary-o {
+
+		.icon1,
+		.svg,
+		svg {
+			color: $primary;
+			stroke: $primary;
+		}
+	}
+
+	&.p-toggle .state.p-primary-o {
+
+		.icon1,
+		.svg,
+		svg {
+			color: $primary;
+			stroke: $primary;
+		}
+	}
+
+	&.p-default:not(.p-fill) input:checked~.state.p-primary-o label:after {
+		background-color: $primary  !important;
+	}
+
+	&.p-switch {
+		input:checked~.state.p-primary:before {
+			border-color: $primary;
+		}
+
+		&.p-fill input:checked~.state.p-primary:before {
+			background-color: $primary  !important;
+		}
+	}
+}
+
+.owl-carousel button.owl-dot {
+	background: rgba(105, 99, 255, 0.3) !important;
+
+	&.active {
+		background: rgb(105, 99, 255) !important;
+	}
+}
+
+.bg-background:before,
+.bg-background2:before,
+.bg-background-color:before {
+	background: $primary-gradient;
+}
+
+.bg-background3:before {
+	background: $primary-gradient;
+}
+
+.slider-header .item:before {
+	background: $primary-gradient;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+	box-shadow: 0 0 0 1px #f9faff, 0 0 0 2px rgba(105, 99, 255, 0.25);
+}
+
+.form-file-input:focus~.form-file-label {
+	box-shadow: 0 0 0 2px rgba(105, 99, 255, 0.25);
+}
+
+.form-range {
+
+	&::-webkit-slider-thumb:focus,
+	&::-moz-range-thumb:focus,
+	&::-ms-thumb:focus {
+		outline: none;
+		box-shadow: 0 0 0 1px #f9faff, 0 0 0 2px rgba(105, 99, 255, 0.25);
+	}
+}
+
+.error-img .form-control:focus {
+	outline: 0;
+	box-shadow: 0 0 0 2px rgba(105, 99, 255, 0.25);
+}
+
+.selectize-input.focus {
+	border-color: $blue;
+	box-shadow: 0 0 0 2px rgba(105, 99, 255, 0.25);
+}
+
+.item-card:hover .item-card-desc:before,
+.item-card7-imgs:hover a,
+.item-card2-img:hover a {
+	background: $primary-gradient;
+}
+
+.countdown-timer-wrapper .timer .timer-wrapper .time {
+	background: $primary-gradient;
+}
+
+.app-sidebar {
+	.side-menu__item.active {
+		background: $primary-gradient  !important;
+		color: $white  !important;
+
+		&:hover {
+			background: $primary-gradient  !important;
+			color: $white  !important;
+		}
+	}
+
+	&:before {
+		background: $primary-gradient;
+	}
+}
+
+.app-sidebar-footer {
+	background: $primary-gradient;
+}
+
+.masthead .masthead-bg {
+	background: $primary-gradient  !important;
+}
+
+@media (max-width: 991px) {
+	.search-show .nav-search {
+		background: $primary-gradient;
+	}
+}
+
+@media (max-width: 991px) {
+	.nav-item.with-sub .sub-item {
+		border-top-color: $primary;
+	}
+}
+
+@media (max-width: 480px) {
+	.zoom-container .arrow-ribbon2:before {
+		border-left-color: $primary;
+	}
+}
+
+.app.sidebar-mini .app-sidebar .side-menu__item.active {
+	color: $white  !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active,
+.dropdown-item:active {
+	i {
+		color: $primary  !important;
+	}
+}
+
+.horizontalMenu>.horizontalMenu-list>li>ul.sub-menu>li:hover i {
+	color: $white  !important;
+}
+
+.items-blog-tab-heading .items-blog-tab-menu li .active {
+	border-color: $primary  !important;
+}
+
+// .breadcrumb-item.active {
+// 	color: $white;
+// }
+mark,
+.mark {
+	color: $primary;
+}
+
+.banner-1 .item-search-menu ul li a:hover {
+	color: $white !important;
+}
