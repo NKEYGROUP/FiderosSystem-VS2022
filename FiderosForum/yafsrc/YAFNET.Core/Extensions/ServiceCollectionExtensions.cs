@@ -23,7 +23,7 @@
  */
 
 using System;
-
+using System.IO;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -32,6 +32,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.DependencyInjection;
 
 using OEmbed.Core.Extensions;
@@ -40,6 +41,7 @@ using UAParser.Extensions;
 
 using YAF.Core.Hubs;
 using YAF.Types.Objects;
+using System.Net;
 
 namespace YAF.Core.Extensions;
 
@@ -53,7 +55,7 @@ public static class ServiceCollectionExtensionsExtensions
     /// </summary>
     /// <param name="services">The services.</param>
     /// <returns>IServiceCollection.</returns>
-    public static IServiceCollection AddYafExtensions(this IServiceCollection services)
+    public static IServiceCollection AddYafExtensions(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddMemoryCache();
 
@@ -62,6 +64,7 @@ public static class ServiceCollectionExtensionsExtensions
 
         services.AddSession(options =>
         {
+            options.Cookie.Domain = configuration.GetSection("SiteDomainName").Get<string>();
             options.IdleTimeout = TimeSpan.FromHours(4);
             options.Cookie.Name = ".YAFNET.Session";
             options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
@@ -123,7 +126,7 @@ public static class ServiceCollectionExtensionsExtensions
 
         services.AddSignalR();
 
-        services.AddYafExtensions();
+        services.AddYafExtensions(configuration);
 
         services.AddYafIdentityOptions();
 
@@ -157,20 +160,28 @@ public static class ServiceCollectionExtensionsExtensions
     public static IServiceCollection AddYafAuthentication(this IServiceCollection services,
         IConfiguration configuration)
     {
+
         var boardConfig = configuration.GetSection("BoardConfiguration").Get<BoardConfiguration>();
 
-        var authenticationBuilder = services.AddAuthentication();
+        var authenticationBuilder = services.AddAuthentication("Identity.Application");
 
-        authenticationBuilder.AddCookie(
-            options =>
-            {
-                options.Cookie.Expiration = TimeSpan.FromDays(7);
-                options.ExpireTimeSpan = TimeSpan.FromDays(7);
-                options.LoginPath = "/Account/Login";
-                options.LogoutPath = "/Account/Logout";
-                options.AccessDeniedPath = "/Info";
-                options.SlidingExpiration = true;
-            });
+        var baseDirectory = configuration.GetSection("AuthFolder").Get<string>(); ;
+        var keyRingPath = Path.GetFullPath(Path.Combine(baseDirectory, "AspNetInterop.KeyRing"));
+
+        services.AddDataProtection()
+            .PersistKeysToFileSystem(new DirectoryInfo(keyRingPath))
+            .SetApplicationName("FiderosSharedCookieApp");
+
+        services.ConfigureApplicationCookie(options => {
+            options.Cookie.Name = ".AspNet.SharedFiderosCookie";
+            options.Cookie.Domain = configuration.GetSection("SiteDomainName").Get<string>();
+            options.ExpireTimeSpan = TimeSpan.FromDays(30);
+            options.LoginPath = "/Account/Login";
+            options.LogoutPath = "/Account/Logout";
+            options.AccessDeniedPath = "/Info";
+            options.SlidingExpiration = true;
+            options.Cookie.SameSite = SameSiteMode.Lax;
+        });
 
         if (boardConfig.GoogleClientSecret.IsSet() && boardConfig.GoogleClientID.IsSet())
         {

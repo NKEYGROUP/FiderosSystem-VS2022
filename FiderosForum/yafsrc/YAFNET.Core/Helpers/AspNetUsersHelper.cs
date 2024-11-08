@@ -455,16 +455,15 @@ public class AspNetUsersHelper : IAspNetUsersHelper, IHaveServiceLocator
     public AspNetUsers GetUser()
     {
         var httpContext = this.Get<IHttpContextAccessor>().HttpContext;
-
-        if (httpContext?.User.Identity == null)
+        if (httpContext?.User.Identity == null || httpContext?.User.Identity.Name == null)
         {
             return null;
         }
-
+        var user = ValidateUserAsync(httpContext.User.Identity.Name).Result;
         return httpContext.User.Identity.IsAuthenticated
             ? this.GetRepository<AspNetUsers>().GetSingle(
                 u => u.UserName.ToLower(CultureInfo.InvariantCulture) ==
-                     httpContext.User.Identity.Name.ToLower(CultureInfo.InvariantCulture))
+                     user.UserName.ToLower(CultureInfo.InvariantCulture))
             : null;
     }
 
@@ -482,9 +481,11 @@ public class AspNetUsersHelper : IAspNetUsersHelper, IHaveServiceLocator
         {
             return null;
         }
+        var user = ValidateUserAsync(httpContext.User.Identity.Name).Result;
+        if (user == null) { return null; }
 
         return httpContext.User.Identity.IsAuthenticated
-                   ? await this.Get<IAspNetUsersHelper>().GetUserByNameAsync(httpContext.User.Identity.Name)
+                   ? await this.Get<IAspNetUsersHelper>().GetUserByNameAsync(user.UserName)
                    : null;
     }
 

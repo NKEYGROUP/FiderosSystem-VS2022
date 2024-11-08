@@ -10,6 +10,9 @@
 @inject SignInManager<AspNetUsers> SignInManager
 @inject BoardContext Current
 
+@{
+    var ctxt = this.Context.Request.Cookies;
+}
 @if (!SignInManager.IsSignedIn(User))
 {
     @if (BoardContext.Current.Get<BoardConfiguration>().AllowLoginAndLogoff)

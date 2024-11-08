@@ -25,6 +25,7 @@
 namespace YAF.Core.Controllers;
 
 using System;
+using System.Collections.Generic;
 using System.Net;
 
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -37,6 +38,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
 using YAF.Core.BasePages;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Components.Authorization;
+using YAF.Core.Identity.Owin;
+using YAF.Types.Models;
 
 /// <summary>
 /// The Albums controller.
@@ -69,7 +76,7 @@ public class LoginBox : ForumBaseController
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [HttpPost("SignIn")]
     public async Task<IActionResult> SignInAsync(LoginModal model)
-    {
+    {      
         var user = await this.Get<IAspNetUsersHelper>().ValidateUserAsync(model.UserName);
 
         if (user == null)
@@ -105,7 +112,6 @@ public class LoginBox : ForumBaseController
             case PasswordVerificationResult.SuccessRehashNeeded:
                 user.PasswordHash = this.Get<IAspNetUsersHelper>().PasswordHasher
                     .HashPassword(user, model.Password);
-
                 return await this.SignInAsync(user, model);
 
             default:
@@ -170,11 +176,9 @@ public class LoginBox : ForumBaseController
     {
         if (!user.TwoFactorEnabled)
         {
-            return await this.Get<IAspNetUsersHelper>().SignInAsync(user, modal.RememberMe);
+            return await this.Get<FiderosCookiesAuthent>().SignInCookiesAuth(HttpContext, user, modal.UserName, modal.RememberMe);
         }
-
         this.Get<ISessionService>().SetPageData(user);
-
         return this.Get<LinkBuilder>().Redirect(ForumPages.Account_Authorize);
     }
 }

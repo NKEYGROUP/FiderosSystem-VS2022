@@ -96,9 +96,10 @@
 
     </div>
     <div class="col-auto">
-        <img style="max-width: @Html.Raw(Model.PageBoardContext.BoardSettings.AvatarWidth); max-height: @Html.Raw(Model.PageBoardContext.BoardSettings.AvatarHeight)"
+       @*  <img style="max-width: @Html.Raw(Model.PageBoardContext.BoardSettings.AvatarWidth); max-height: @Html.Raw(Model.PageBoardContext.BoardSettings.AvatarHeight)"
              src="@Html.Raw(Model.Get<IAvatars>().GetAvatarUrlForUser(Model.CombinedUser.Item1))"
-             alt="avatar" class="img-fluid rounded"/>
+             alt="avatar" class="img-fluid rounded"/> *@
+        <img class="brround" src="https://www.fideros.com/MULTIMEDIA/Users/26268c3a62bf48c2933d4a5a163fc1f0.jpg" " alt="img">
     </div>
 </div>
 <br>

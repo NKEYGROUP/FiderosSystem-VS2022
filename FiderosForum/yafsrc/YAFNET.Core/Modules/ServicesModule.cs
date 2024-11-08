@@ -34,6 +34,7 @@ using YAF.Core.BBCode;
 using YAF.Core.Handlers;
 using YAF.Core.Hubs;
 using YAF.Core.Identity;
+using YAF.Core.Identity.Owin;
 using YAF.Core.Services;
 using YAF.Core.Services.Cache;
 using YAF.Core.Services.Import;
@@ -183,6 +184,7 @@ public class ServicesModule : BaseModule
 
         builder.RegisterType<AspNetUsersHelper>().As<IAspNetUsersHelper>().InstancePerBoardContext();
         builder.RegisterType<AspNetRolesHelper>().As<IAspNetRolesHelper>().InstancePerBoardContext();
+        builder.RegisterType<FiderosCookiesAuthent>().InstancePerBoardContext();
     }
 
     /// <summary>
