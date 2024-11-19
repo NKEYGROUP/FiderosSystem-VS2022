@@ -387,4 +387,9 @@ public class AspNetUsers<TKey> : IEntity, IHasId<TKey>
     /// Gets or sets XMPP.
     /// </summary>
     public string Profile_XMPP { get; set; }
+
+    /// <summary>
+    /// Gets or sets Company Name.
+    /// </summary>
+    public string Profile_Company { get; set; }
 }

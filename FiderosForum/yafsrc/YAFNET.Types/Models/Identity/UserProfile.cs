@@ -116,4 +116,10 @@ public class ProfileInfo
     /// Gets or sets XMPP.
     /// </summary>
     public string XMPP { get; set; }
+
+    /// <summary>
+    /// Gets or sets Company.
+    /// </summary>
+    public string Company { get; set; }
+    
 }

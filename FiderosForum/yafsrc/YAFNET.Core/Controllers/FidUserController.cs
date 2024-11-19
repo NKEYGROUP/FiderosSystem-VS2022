@@ -5,10 +5,16 @@
  */
 
 using System;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using ServiceStack;
+using YAF.Core.Extensions;
 using YAF.Types.Attributes;
+using YAF.Types.Models;
 using YAF.Types.Objects;
 
 namespace YAF.Core.Controllers;
@@ -53,55 +59,106 @@ public class FidUserController : Controller, IHaveServiceLocator, IHaveLocalizat
     [HttpPost("PostFidUser")]
     //[OutputCache]
     [Consumes("application/json")]
-    public async Task<IActionResult> PostFidUser([FromBody]NKGMessage nkgMsg)
+    public async Task<IActionResult> PostFidUser([FromBody] NkgMessage nkgMsg)
     {
-        ReturnMessage errMsg = ReturnMessage.CreateReturnMsg("SUCCESS", "");
-        if (nkgMsg == null || string.IsNullOrEmpty(nkgMsg.Command))
+        MessageStatus errMsg = MessageStatus.CreateReturnMsg(MsgStatusValue.Ok, "");
+        if (nkgMsg == null || nkgMsg.MessageStatus == null 
+            || string.IsNullOrEmpty(nkgMsg.Command) || string.IsNullOrEmpty(nkgMsg.EmailAddress) || string.IsNullOrEmpty(nkgMsg.UserName))
         {
-            errMsg = ReturnMessage.CreateReturnMsg("ERROR", "NKGMessage is missing or Command is missing.");
-            return this.Ok(errMsg);            
+            errMsg.Status = MsgStatusValue.Error;
+            errMsg.Message = "Message is not valid.";
+            return this.Ok(errMsg);
         }
-        //var user = await this.Get<IAspNetUsersHelper>().ValidateUserAsync(EmailAddress);
-        //if (user == null)
+        bool userit = false;
+        var guidApp = this.Get<BoardSettings>().ApplicationId;
+         string password = "forumFideros@NKG2024";
+               
+        var user = await this.Get<IAspNetUsersHelper>().ValidateUserAsync(nkgMsg.EmailAddress);
+        if (user == null && nkgMsg.Command == "CREATE")
+        {
+            var newuser = new AspNetUsers
+            {
+                Id = Guid.NewGuid().ToString(),
+                ApplicationId = guidApp,
+                UserName = nkgMsg.UserName,
+                LoweredUserName = nkgMsg.UserName.ToLower(),
+                Email = nkgMsg.EmailAddress,
+                LoweredEmail = nkgMsg.EmailAddress.ToLower(),
+                IsApproved = true,
+                EmailConfirmed = true,
+                Profile_Country = nkgMsg.CountryCode,
+                Profile_City = nkgMsg.City,
+                Profile_RealName = nkgMsg.RealName,
+                Profile_Occupation = nkgMsg.Occupation,
+                Profile_Interests = nkgMsg.Interests,
+                Profile_Birthday = nkgMsg.Birthday,
+                Profile_Homepage = nkgMsg.HomePage,
+                Profile_Company = nkgMsg.CompanyName
+            };
+            try
+            {
+                var ident = await this.Get<IAspNetUsersHelper>().CreateUserAsync(newuser, password);
+                if (!ident.Succeeded)
+                {
+                    errMsg.Status = MsgStatusValue.Error;
+                    errMsg.Message = string.Join(";", ident.Errors.Select(t => t.Code + "|" + t.Description));
+                    return this.Ok(errMsg);
+                }
+            }
+            catch (Exception ex)
+            {
+                var str = ex.Message;
+            }
+            // setup initial roles (if any) for this user
+            await this.Get<IAspNetRolesHelper>().SetupUserRolesAsync(1, newuser);
+            user = newuser;
+            userit = true;
+
+        }
+        else if (user != null && nkgMsg.Command == "UPDATE")
+        {
+            user.ApplicationId = guidApp;
+            user.Profile_Country = nkgMsg.CountryCode;
+            user.IsApproved = true;
+            user.EmailConfirmed = true;
+            user.Profile_City = nkgMsg.City;
+            user.Profile_RealName = nkgMsg.RealName;
+            user.Profile_Occupation = nkgMsg.Occupation;
+            user.Profile_Interests = nkgMsg.Interests;
+            user.Profile_Birthday = nkgMsg.Birthday;
+            user.Profile_Homepage = nkgMsg.HomePage;
+            user.Profile_Company = nkgMsg.CompanyName;
+            var ident = await this.Get<IAspNetUsersHelper>().UpdateUserAsync(user);
+            if (!ident.Succeeded)
+            {
+                errMsg.Status = MsgStatusValue.Error;
+                errMsg.Message = string.Join(";", ident.Errors.Select(t => t.Code + "|" + t.Description));
+                return this.Ok(errMsg);
+            }
+            var code = HttpUtility.UrlEncode( await this.Get<IAspNetUsersHelper>().GeneratePasswordResetTokenAsync(user), Encoding.UTF8);
+            var result = await this.Get<IAspNetUsersHelper>()
+            .ResetPasswordAsync(user, HttpUtility.UrlDecode(code, Encoding.UTF8), password);
+            userit = true;
+        }
+        if (userit)
+        {
+            var displayName = nkgMsg.RealName;
+
+            // create the user in the YAF DB as well as sync roles...
+            var userId = await this.Get<IAspNetRolesHelper>().CreateForumUserAsync(user, displayName, 1);
+            var userForum = this.GetRepository<User>().GetById(userId.GetValueOrDefault());
+            userForum.Avatar = nkgMsg.Avatar;
+            this.GetRepository<User>().Update(userForum);
+        }
+        else
+        {
+            errMsg.Status = MsgStatusValue.Error;
+            errMsg.Message = "Impossible de créer ce utilisateur.";
+            return this.Ok(errMsg);
+        }
+        //else if (user != null && nkgMsg.Command == "DELETE")
         //{
-        //    var guidApp = this.Get<BoardSettings>().ApplicationId;
-        //    var newuser = new AspNetUsers
-        //    {
-        //        Id = Guid.NewGuid().ToString(),
-        //        ApplicationId = guidApp,
-        //        UserName = UserName,
-        //        LoweredUserName = UserName.ToLower(),
-        //        Email = EmailAddress,
-        //        LoweredEmail = EmailAddress.ToLower(),
-        //        IsApproved = true,
-        //        EmailConfirmed = true,
-        //        Profile_Country = CountryName,
-        //        Profile_RealName = RealName,
-        //        Profile_Occupation = Occupation,
-        //        Profile_Birthday = null,
-        //    };
-        //    string password = Password;
-        //    password ??= "forumFideros@NKG2024";
-        //    var ident = await this.Get<IAspNetUsersHelper>().CreateUserAsync(newuser, password);
-        //    if (!ident.Succeeded)
-        //        errMsg = ReturnMessage.CreateReturnMsg("ERROR", string.Join(";", ident.Errors.Select(t => t.Code + "|" + t.Description)));
 
-        //    // setup initial roles (if any) for this user
-        //    await this.Get<IAspNetRolesHelper>().SetupUserRolesAsync(1, user);
-
-        //    var displayName = RealName;
-
-        //    // create the user in the YAF DB as well as sync roles...
-        //    var userId = await this.Get<IAspNetRolesHelper>().CreateForumUserAsync(user, displayName, 1);
-        //}
-        //else
-        //{
-        //    user.Profile_Country = CountryName;
-        //    user.Profile_RealName = RealName;
-        //    user.Profile_Occupation = Occupation;
-        //    var ident = await this.Get<IAspNetUsersHelper>().UpdateUserAsync(user);
-        //    if (!ident.Succeeded)
-        //        errMsg = ReturnMessage.CreateReturnMsg("ERROR", string.Join(";", ident.Errors.Select(t => t.Code + "|" + t.Description)));
         //}
         return this.Ok(errMsg);
     }
@@ -109,44 +166,53 @@ public class FidUserController : Controller, IHaveServiceLocator, IHaveLocalizat
     [HttpGet("GetFidUser")]
     //[OutputCache]
     [Consumes("application/json")]
-    public async Task<ActionResult<NKGMessage>> GetFidUser(string EmailAddress)
+    public async Task<ActionResult<NkgMessage>> GetFidUser(string EmailAddress)
     {
-        ReturnMessage errMsg = ReturnMessage.CreateReturnMsg("SUCCESS", "");
-        if (string.IsNullOrEmpty(EmailAddress)) {
-            errMsg = ReturnMessage.CreateReturnMsg("ERROR", "Email address is empty.");
-            return this.Ok(errMsg);
+        NkgMessage nkgMsg = new NkgMessage();
+        nkgMsg.MessageStatus = MessageStatus.CreateReturnMsg(MsgStatusValue.Ok, "");
+        if (string.IsNullOrEmpty(EmailAddress))
+        {
+            nkgMsg.MessageStatus = MessageStatus.CreateReturnMsg(MsgStatusValue.Error, "Email address is empty.");
+            return this.Ok(nkgMsg);
         }
-        NKGMessage nkgMsg = null;
         var user = await this.Get<IAspNetUsersHelper>().ValidateUserAsync(EmailAddress);
-        if (user != null) {
-           
-            nkgMsg = new NKGMessage()
-            {
-                Command = "UPDATE",
-                UserName = user.UserName,
-                EmailAddress = EmailAddress,
-                RealName = user.Profile_RealName,
-                Avatar = "",
-                CompanyName = user.Profile_Homepage,
-                Occupation = user.Profile_Occupation,
-                CountryCode = user.Profile_Country,
-                City = user.Profile_City,
-                Interests = user.Profile_Interests,
-                Password = ""
-            };
+        if (user != null)
+        {
+            nkgMsg.Command = "UPDATE";
+            nkgMsg.UserName = user.UserName;
+            nkgMsg.EmailAddress = EmailAddress;
+            nkgMsg.RealName = user.Profile_RealName;
+            nkgMsg.Avatar = "";
+            nkgMsg.CompanyName = user.Profile_Homepage;
+            nkgMsg.Occupation = user.Profile_Occupation;
+            nkgMsg.CountryCode = user.Profile_Country;
+            nkgMsg.City = user.Profile_City;
+            nkgMsg.Interests = user.Profile_Interests;
+            nkgMsg.Password = "";
+            nkgMsg.Birthday = user.Profile_Birthday;
         }
-        else {
-           errMsg = ReturnMessage.CreateReturnMsg("ERROR", "User does not exists.");
+        else
+        {
+            nkgMsg.Command = "CREATE";
+            nkgMsg.MessageStatus = MessageStatus.CreateReturnMsg(MsgStatusValue.Error, "User does not exists.");
         }
         return this.Ok(nkgMsg);
     }
+
+    public static string HashPassword(string password)
+    {
+        // Generate a 128-bit salt using a sequence of
+        // cryptographically strong random bytes.
+        byte[] salt = RandomNumberGenerator.GetBytes(128 / 8); // divide by 8 to convert bits to bytes
+        // derive a 256-bit subkey (use HMACSHA256 with 100,000 iterations)
+        string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+            password: password!,
+            salt: salt,
+            prf: KeyDerivationPrf.HMACSHA256,
+            iterationCount: 100000,
+            numBytesRequested: 256 / 8));
+        return hashed;
+    }
 }
 
-public class ReturnMessage
-{
-    public string Code { get; set; }
-    public string Message { get; set; }
 
-    public static ReturnMessage CreateReturnMsg(string code,  string message) =>
-        new ReturnMessage() { Code = code, Message = message };
-}

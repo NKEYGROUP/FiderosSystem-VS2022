@@ -450,7 +450,7 @@ public class AspNetUsersHelper : IAspNetUsersHelper, IHaveServiceLocator
     /// Method returns MembershipUser
     /// </summary>
     /// <returns>
-    /// Returns MembershipUser
+    /// Returns MembershipUse
     /// </returns>
     public AspNetUsers GetUser()
     {
@@ -459,7 +459,13 @@ public class AspNetUsersHelper : IAspNetUsersHelper, IHaveServiceLocator
         {
             return null;
         }
+
         var user = ValidateUserAsync(httpContext.User.Identity.Name).Result;
+
+        if (user == null)
+        {
+            return null;
+        }
         return httpContext.User.Identity.IsAuthenticated
             ? this.GetRepository<AspNetUsers>().GetSingle(
                 u => u.UserName.ToLower(CultureInfo.InvariantCulture) ==

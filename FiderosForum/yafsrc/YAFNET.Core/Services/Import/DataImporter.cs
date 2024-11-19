@@ -569,7 +569,8 @@ public class DataImporter : IHaveServiceLocator, IDataImporter
             Profile_Occupation = userProfile.Occupation,
             Profile_RealName = userProfile.RealName,
             Profile_Skype = userProfile.Skype,
-            Profile_XMPP = userProfile.XMPP
+            Profile_XMPP = userProfile.XMPP,
+            Profile_Company = userProfile.Company
         };
 
         await this.Get<IAspNetUsersHelper>().CreateUserAsync(user, pass);

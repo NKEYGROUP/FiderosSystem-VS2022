@@ -530,6 +530,8 @@ public class EditProfileModel : ProfilePage
         user.Profile_RealName = userProfile.RealName;
         user.Profile_Skype = userProfile.Skype;
         user.Profile_XMPP = userProfile.XMPP;
+        user.Profile_Company = userProfile.Company;
+        
 
         return this.Get<IAspNetUsersHelper>().UpdateUserAsync(user);
     }

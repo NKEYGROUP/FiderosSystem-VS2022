@@ -43,8 +43,14 @@ public static class UserExtensions
     /// </returns>
     public static string DisplayOrUserName(this User user)
     {
+
+        var compName = BoardContext.Current.MembershipUser?.Profile_Company;
+        if (!string.IsNullOrEmpty(compName))
+        {
+            compName = $" ({compName})";
+        }
         return BoardContext.Current.BoardSettings.EnableDisplayName
-                   ? user.DisplayName
+                   ? $"{user.DisplayName}{compName}"
                    : user.Name;
     }
 }

@@ -111,7 +111,7 @@ public class Avatars : IAvatars, IHaveServiceLocator
                 "Avatar",
                 new { userId });
         }
-        else if (avatarString.IsSet() && avatarString.StartsWith('/'))
+        else if (avatarString.IsSet() && (avatarString.StartsWith('/') || avatarString.ToLower().StartsWith("http")))
         {
             avatarUrl = avatarString;
         }
